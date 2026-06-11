@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="pt-BR" :class="{ 'dark': darkMode }" x-data="{ darkMode: localStorage.getItem('darkMode') === 'true', searchOpen: false, mobileMenuOpen: false }" x-init="$watch('darkMode', val => localStorage.setItem('darkMode', val))">
+<head>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <script>
+        (function() {
+            var savedTheme = localStorage.getItem('darkMode');
+            if (savedTheme === 'true') {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        })();
+    </script>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VN08M1DX3Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-VN08M1DX3Q');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <title>O Mentor: Jander Nunes | Voz Direita</title>
+    
+    <!-- Meta tags SEO -->
+    <meta name="description" content="A trajetória de despertar político de Jander Nunes e a carta de princípios que motivou a criação do portal de inteligência Voz Direita.">
+    <meta name="keywords" content="Voz Direita, Jander Nunes, Biografia, Conservadorismo, Esquerda Neototalitária, Progressismo Autoritário, Engenharia Social Coercitiva, Neototalitarismo">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        playfair: ['"Playfair Display"', 'serif'],
+                        jakarta: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    colors: {
+                        gold: {
+                            50: '#fdfcf7',
+                            100: '#f9f6e6',
+                            200: '#f2eabf',
+                            300: '#e5d78d',
+                            400: '#d5be5a',
+                            500: '#c2a233',
+                            600: '#a38124',
+                            700: '#80611c',
+                            800: '#604617',
+                            900: '#463312',
+                            950: '#2b1e0a',
+                        },
+                        navy: {
+                            50: '#f4f6fa',
+                            100: '#e8ecf4',
+                            200: '#cbd6e6',
+                            300: '#9fb5d1',
+                            400: '#6c8fb7',
+                            500: '#4a729d',
+                            600: '#395b82',
+                            700: '#2f496a',
+                            800: '#293f5a',
+                            900: '#0a1128', // navy-blue
+                            950: '#050a18', // deep navy-blue
+                        },
+                        sand: {
+                            50: '#faf9f6',
+                            100: '#f5f2eb', // white-sand
+                            200: '#e7e2d4',
+                            300: '#d5ccb7',
+                            400: '#bea48c',
+                            500: '#a38b70',
+                            600: '#8c755c',
+                            700: '#735f4b',
+                            950: '#2b241c',
+                        },
+                        intel: {
+                            900: '#0b0f19',
+                            950: '#030712',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        [x-cloak] { display: none !important; }
+        html {
+            scroll-behavior: smooth;
+        }
+        .glow-sphere {
+            filter: blur(140px);
+            pointer-events: none;
+        }
+        ::selection {
+            background-color: rgba(194, 162, 51, 0.3);
+            color: #ffffff;
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -4px;
+            left: 50%;
+            background-color: currentColor;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateX(-50%);
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="font-jakarta bg-sand-50 text-navy-900 dark:bg-navy-950 dark:text-sand-100 transition-colors duration-300 min-h-screen flex flex-col">
+
+    <!-- GLOW SPHERES DE ATMOSFERA -->
+    <div class="absolute top-1/4 left-10 w-[500px] h-[500px] rounded-full bg-navy-900/10 dark:bg-navy-900/5 glow-sphere -z-10"></div>
+    <div class="absolute top-2/3 right-10 w-[600px] h-[600px] rounded-full bg-gold-900/5 glow-sphere -z-10"></div>
+
+    <!-- HEADER (CABEÇALHO STICKY) -->
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-zinc-200/20 dark:border-zinc-800/10 backdrop-blur-md bg-white/70 dark:bg-navy-950/75 shadow-sm dark:shadow-none">
+        <div class="max-w-[1600px] w-full mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+            
+            <!-- Logo (Esquerda) -->
+            <div class="flex items-center">
+                <a href="index.html" id="logo-nav" class="flex items-center space-x-0.5 group">
+                    <span class="font-light text-2xl tracking-wide text-zinc-500 dark:text-zinc-400 transition-colors duration-300 font-jakarta">Voz</span>
+                    <span class="font-extrabold text-2xl tracking-tight text-zinc-900 dark:text-white font-playfair italic group-hover:text-gold-500 transition-colors duration-300">Direita</span>
+                </a>
+            </div>
+
+            <!-- Menu de Navegação (Centro) -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="index.html" id="menu-inicio"
+                    class="nav-link text-sm font-medium tracking-wide text-zinc-600 hover:text-gold-600 dark:text-zinc-400 dark:hover:text-gold-400 transition-colors">Início</a>
+                <a href="/#radar-narrativas" id="menu-autopsia"
+                    class="nav-link text-sm font-medium tracking-wide text-zinc-600 hover:text-gold-600 dark:text-zinc-400 dark:hover:text-gold-400 transition-colors">Autópsia da Mídia</a>
+                <a href="/#guerra-pop" id="menu-cultura"
+                    class="nav-link text-sm font-medium tracking-wide text-zinc-600 hover:text-gold-600 dark:text-zinc-400 dark:hover:text-gold-400 transition-colors">Cultura Pop</a>
+                <a href="/#aparelhamento" id="menu-aparelhamento"
+                    class="nav-link text-sm font-medium tracking-wide text-zinc-600 hover:text-gold-600 dark:text-zinc-400 dark:hover:text-gold-400 transition-colors">Aparelhamento</a>
+                <a href="fundador" id="menu-mentor"
+                    class="nav-link text-sm font-semibold tracking-wide text-zinc-900 dark:text-white border-b border-gold-500 pb-0.5 transition-colors">O Mentor</a>
+            </nav>
+
+            <!-- Ações (Direita) -->
+            <div class="flex items-center space-x-4">
+                
+                <!-- Campo de Pesquisa Interativo -->
+                <div class="relative flex items-center" x-data="{ localSearchOpen: false }">
+                    <button
+                        @click="localSearchOpen = !localSearchOpen; if(localSearchOpen) $nextTick(() => $refs.searchInput.focus())"
+                        id="btn-search-toggle"
+                        class="p-2 text-zinc-600 dark:text-zinc-300 hover:text-gold-500 transition-colors focus:outline-none"
+                        aria-label="Abrir busca">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </button>
+                    <input x-ref="searchInput" x-show="localSearchOpen" @click.away="localSearchOpen = false"
+                        x-transition:enter="transition ease-out duration-200"
+                        x-transition:enter-start="opacity-0 scale-95 translate-x-4"
+                        x-transition:enter-end="opacity-100 scale-100 translate-x-0"
+                        x-transition:leave="transition ease-in duration-150"
+                        x-transition:leave-start="opacity-100 scale-100 translate-x-0"
+                        x-transition:leave-end="opacity-0 scale-95 translate-x-4" type="text" id="input-search"
+                        placeholder="Buscar inteligência..."
+                        class="absolute right-10 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-xs px-3 py-1.5 rounded-full w-48 md:w-64 focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 shadow-lg text-zinc-800 dark:text-zinc-200"
+                        x-cloak>
+                </div>
+
+                <!-- Botão Alternador de Tema -->
+                <button @click="darkMode = !darkMode" 
+                        id="btn-theme-toggle"
+                        class="p-2 text-zinc-600 dark:text-zinc-300 hover:text-gold-500 transition-colors focus:outline-none"
+                        aria-label="Alternar tema">
+                    <svg x-show="darkMode" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" x-cloak>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m2.828-9.9a5 5 0 117.07 7.07l-.707-.707M6.343 6.343l.707.707m9.9 9.9l.707-.707" />
+                    </svg>
+                    <svg x-show="!darkMode" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" x-cloak>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+
+                <!-- Hamburguer Menu (Mobile) -->
+                <button @click="mobileMenuOpen = !mobileMenuOpen" id="btn-mobile-menu"
+                    class="p-2 md:hidden text-zinc-600 dark:text-zinc-300 hover:text-gold-500 transition-colors focus:outline-none"
+                    aria-label="Menu principal">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+
+            </div>
+        </div>
+
+        <!-- Menu Mobile Drawer -->
+        <div x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 -translate-y-4" x-transition:enter-end="opacity-100 translate-y-0"
+            x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0"
+            x-transition:leave-end="opacity-0 -translate-y-4" id="mobile-drawer"
+            class="md:hidden border-t border-zinc-200/20 bg-white/95 dark:bg-[#0b1329]/95 backdrop-blur-lg px-6 py-6 space-y-4 shadow-xl"
+            x-cloak>
+            <a href="index.html" class="block text-base font-medium text-zinc-600 dark:text-zinc-400 hover:text-gold-500">Início</a>
+            <a href="/#radar-narrativas" class="block text-base font-medium text-zinc-600 dark:text-zinc-400 hover:text-gold-500">Autópsia da Mídia</a>
+            <a href="/#guerra-pop" class="block text-base font-medium text-zinc-600 dark:text-zinc-400 hover:text-gold-500">Cultura Pop</a>
+            <a href="/#aparelhamento" class="block text-base font-medium text-zinc-600 dark:text-zinc-400 hover:text-gold-500">Aparelhamento</a>
+            <a href="fundador" class="block text-base font-semibold text-zinc-900 dark:text-white hover:text-gold-500">O Mentor</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION (CABEÇALHO) -->
+    <section class="relative pt-32 pb-16 w-full overflow-hidden bg-sand-50 dark:bg-navy-950">
+        
+        <!-- Padrão Sutil de Grade Linear -->
+        <div class="absolute inset-0 z-0 bg-[linear-gradient(rgba(0,0,0,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.015)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:30px_30px] opacity-75"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-sand-50 via-sand-50/90 to-sand-50 dark:from-navy-950 dark:via-navy-950/95 dark:to-navy-950"></div>
+
+        <!-- Painel de Título -->
+        <div class="relative z-10 max-w-[1600px] w-full mx-auto px-8">
+            <div class="max-w-5xl space-y-4">
+                
+                <!-- Tag de Alerta -->
+                <div class="inline-flex items-center space-x-2 px-3 py-1 bg-amber-950/40 border border-amber-500/40 rounded text-[10px] sm:text-xs font-mono font-bold text-amber-600 dark:text-amber-500 uppercase tracking-widest">
+                    <span class="h-1.5 w-1.5 rounded-full bg-amber-500 animate-pulse"></span>
+                    <span>PERFIL ESTRATÉGICO &nbsp;|&nbsp; JANDER NUNES</span>
+                </div>
+
+                <!-- Título Editorial -->
+                <h1 class="font-playfair text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-navy-900 dark:text-white leading-tight">
+                    Do Despertar à Trincheira
+                </h1>
+
+                <!-- Subtítulo -->
+                <p class="font-playfair text-lg text-navy-700 dark:text-sand-200 italic font-light max-w-3xl leading-relaxed">
+                    Por que decidi expor as táticas de controle e fundar o Voz Direita.
+                </p>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- CORPO DO DOSSIÊ (GRID ASSIMÉTRICO 12 COLUNAS) -->
+    <main class="relative z-20 flex-grow bg-sand-50 dark:bg-navy-950 transition-colors duration-300">
+        
+        <div class="max-w-[1600px] w-full px-8 mx-auto py-12 grid grid-cols-1 lg:grid-cols-12 gap-12">
+            
+            <!-- COLUNA DA ESQUERDA (8 colunas - Biografia) -->
+            <div class="lg:col-span-8 space-y-12 pr-0 lg:pr-6 border-r border-sand-300 dark:border-white/5">
+                
+                <!-- FASE 1: A Cegueira Estratégica -->
+                <section class="space-y-4">
+                    <h3 class="font-playfair text-2xl font-bold text-navy-900 dark:text-white pb-2 border-b border-sand-300 dark:border-zinc-800/30">
+                        FASE 1: A Cegueira Estratégica (O Passado)
+                    </h3>
+                    <div class="text-navy-900/80 dark:text-sand-200/90 text-base leading-relaxed font-light font-jakarta space-y-4">
+                        <p>
+                            No passado, eu carecia de uma real consciência política. Meus valores estavam invertidos por uma névoa de apatia e ingenuidade. Lembro-me, sem orgulho mas com a honestidade necessária para esta trincheira, de ter votado duas vezes no atual presidente da República. Eu acreditava genuinamente nas promessas vazias de pacificação social e progresso popular. Acreditava que o desarmamento civil, por exemplo, representava uma forma de proteção coletiva. Não percebia que, sob o manto da falsa segurança, o Estado desarmava o cidadão honesto para privá-lo de sua legítima defesa, abrindo espaço para a expansão do controle governamental sobre a vida privada.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- FASE 2: O Ponto de Virada e o Autoconhecimento -->
+                <section class="space-y-4">
+                    <h3 class="font-playfair text-2xl font-bold text-navy-900 dark:text-white pb-2 border-b border-sand-300 dark:border-zinc-800/30">
+                        FASE 2: O Ponto de Virada e o Autoconhecimento
+                    </h3>
+                    <div class="text-navy-900/80 dark:text-sand-200/90 text-base leading-relaxed font-light font-jakarta space-y-4">
+                        <p>
+                            O despertar veio por meio de um processo difícil de provações pessoais e de uma busca profunda por autoconhecimento, que finalmente me trouxeram clareza moral. Minhas antigas crenças utilitaristas começaram a me causar profunda repulsa. Houve a percepção inevitável de que um sistema que protege criminosos (por meio de benesses espúrias como as saídas temporárias de prisões) e pune obstinadamente o trabalhador comum não busca realizar a justiça, mas sim implantar o controle absoluto sobre as nossas vidas.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- FASE 3: A Anatomia da Hipocrisia -->
+                <section class="space-y-4">
+                    <h3 class="font-playfair text-2xl font-bold text-navy-900 dark:text-white pb-2 border-b border-sand-300 dark:border-zinc-800/30">
+                        FASE 3: A Anatomia da Hipocrisia
+                    </h3>
+                    <div class="text-navy-900/80 dark:text-sand-200/90 text-base leading-relaxed font-light font-jakarta space-y-4">
+                        <p>
+                            Foi ao analisar as entranhas da máquina pública que compreendi a extensão da ameaça. A <strong class="text-navy-900 dark:text-white font-semibold">Esquerda Neototalitária</strong> não joga dentro das regras; ela opera com extrema violência institucional e desinformação sistemática, como evidenciado nos sucessivos atentados físicos e morais desferidos contra conservadores e o ex-presidente <a href="analise-rodaviva-bolsonaro.html" class="text-gold-600 dark:text-gold-400 hover:underline font-bold" title="Autópsia do Roda Viva 2018">Jair Bolsonaro</a>. Vivemos sob um regime onde a lógica jurídica foi subvertida: um presidente condenado por corrupção em múltiplas instâncias foi devolvido ao poder pelo Supremo Tribunal Federal sem jamais ter sido inocentado, lavadores de dinheiro profissionais são soltos em menos de vinte e quatro horas, enquanto mães de família recebem penas de dezenessete anos de prisão por vandalismo de estátuas públicas no dia 8 de Janeiro. Esse cenário aberrante de perseguição política escancarada é a materialização da <strong class="text-navy-900 dark:text-white font-semibold">Engenharia Social Coercitiva</strong> e do <strong class="text-navy-900 dark:text-white font-semibold">Progressismo Autoritário</strong>, que usam as instituições judiciais para subjugar a dissidência e domesticar a população.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- FASE 4: A Missão do Voz Direita -->
+                <section class="space-y-4">
+                    <h3 class="font-playfair text-2xl font-bold text-navy-900 dark:text-white pb-2 border-b border-sand-300 dark:border-zinc-800/30">
+                        FASE 4: A Missão do Voz Direita
+                    </h3>
+                    <div class="text-navy-900/80 dark:text-sand-200/90 text-base leading-relaxed font-light font-jakarta space-y-4">
+                        <p>
+                            Diante da consolidação desse <strong class="text-navy-900 dark:text-white font-semibold">Neototalitarismo</strong> cultural e institucional, decidi que fundar o portal Voz Direita não seria apenas um projeto, mas um dever patriótico inadiável de legítima defesa intelectual. Minha missão aqui é clara: alertar e armar os cidadãos comuns de direita com as ferramentas cognitivas necessárias para decifrar e combater as táticas sujas e as narrativas manipuladas do sistema. Nossa luta é por um Brasil soberano e seguro. Um país de verdade, onde o trabalhador possa pegar o ônibus de madrugada sem ter uma arma apontada para a sua cabeça por causa de um telefone celular, e onde as famílias não sejam obrigadas a ouvir o chefe do Executivo romantizar o crime sob a desculpa infame de que o roubo é aceitável "para tomar uma cervejinha". A clareza moral é a nossa maior trincheira.
+                        </p>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- COLUNA DA DIREITA (4 colunas - Sidebar Sticky) -->
+            <aside class="lg:col-span-4 space-y-8">
+                <div class="lg:sticky lg:top-28 space-y-8">
+                    
+                    <!-- FOTO EM DESTAQUE DO MENTOR (GRANDE) -->
+                    <div class="w-[85%] mx-auto rounded-2xl overflow-hidden border border-zinc-200/30 dark:border-white/10 shadow-2xl relative group bg-zinc-900/10 dark:bg-zinc-900/40 backdrop-blur-md transition-all duration-300">
+                        <img src="assets/jander_nunes_profile.webp" alt="Jander Nunes - Fundador do Voz Direita" class="w-full h-auto object-cover filter grayscale hover:grayscale-0 transition-all duration-700 ease-out scale-100 group-hover:scale-105" fetchpriority="high">
+                        
+                        <!-- Overlay gradiente discreto inferior -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60 pointer-events-none"></div>
+                    </div>
+
+                    <!-- MINI BIO E REDES SOCIAIS (SOLTO, SEM CAIXA - CENTRALIZADO) -->
+                    <div class="w-[85%] mx-auto space-y-4 text-center py-2">
+                        <p class="text-sm font-light leading-relaxed text-navy-900/80 dark:text-sand-300">
+                            Analista estratégico de comunicação, com mais de 15 anos nos bastidores da imprensa. Dedicado a expor as engrenagens da engenharia social coercitiva e do neototalitarismo do sistema.
+                        </p>
+                        <div class="flex items-center justify-center space-x-5 pt-1">
+                            <!-- X (Twitter) -->
+                            <a href="#" class="text-zinc-400 hover:text-navy-950 dark:hover:text-white transition-colors duration-300" aria-label="X (antigo Twitter)">
+                                <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24">
+                                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                                </svg>
+                            </a>
+                            <!-- TikTok -->
+                            <a href="#" class="text-zinc-400 hover:text-[#ff0050] transition-colors duration-300" aria-label="TikTok">
+                                <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24">
+                                    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.02 1.73 4.12.73.72 1.63 1.24 2.62 1.52v3.83c-1.39-.07-2.77-.55-3.92-1.34-.33-.23-.65-.49-.94-.78v7.06c.06 1.83-.55 3.69-1.74 5.09-1.52 1.82-3.96 2.76-6.31 2.42-2.31-.31-4.44-1.92-5.27-4.14-.99-2.58-.33-5.69 1.67-7.6 1.48-1.44 3.59-2.12 5.64-1.83v3.9c-1.07-.26-2.26-.01-3.09.73-.86.74-1.19 1.95-.88 3.03.32 1.15 1.46 1.99 2.66 1.93 1.25-.01 2.37-1.01 2.45-2.26.02-3.15.01-6.3.01-9.45.01-1.38.01-2.76.01-4.14z"/>
+                                </svg>
+                            </a>
+                            <!-- YouTube -->
+                            <a href="#" class="text-zinc-400 hover:text-[#ff0000] transition-colors duration-300" aria-label="YouTube">
+                                <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24">
+                                    <path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.108C19.53 3.53 12 3.53 12 3.53s-7.53 0-9.388.525A3.003 3.003 0 0 0 .502 6.163C0 8.04 0 12 0 12s0 3.96.502 5.837a3.003 3.003 0 0 0 2.11 2.108C4.47 20.47 12 20.47 12 20.47s7.53 0 9.388-.525a3.003 3.003 0 0 0 2.11-2.108C24 15.96 24 12 24 12s0-3.96-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </aside>
+
+        </div>
+    </main>
+
+    <!-- FOOTER (RODAPÉ) -->
+    <footer class="bg-black border-t border-navy-900/30 text-zinc-400 py-16 transition-colors duration-300 mt-auto relative z-30">
+        <div class="max-w-[1600px] w-full mx-auto px-6 lg:px-12">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+                
+                <!-- Logo & Copyright -->
+                <div class="flex flex-col items-center md:items-start space-y-2">
+                    <div class="flex items-center space-x-0.5">
+                        <span class="font-light text-xl tracking-wide text-zinc-500 font-jakarta">Voz</span>
+                        <span class="font-extrabold text-xl tracking-tight text-white font-playfair italic">Direita</span>
+                    </div>
+                    <p class="text-[10px] font-mono text-zinc-600 dark:text-zinc-500 tracking-wide text-center md:text-left">
+                        Copyright &copy; 2026 Voz Direita. Todos os direitos reservados.
+                    </p>
+                </div>
+
+                <!-- Links de Redes Sociais -->
+                <div class="flex items-center space-x-6">
+                    <a href="#" class="text-zinc-500 hover:text-gold-400 transition-colors text-xs uppercase tracking-wider font-semibold">X (antigo Twitter)</a>
+                    <a href="#" class="text-zinc-500 hover:text-gold-400 transition-colors text-xs uppercase tracking-wider font-semibold">Telegram</a>
+                    <a href="#" class="text-zinc-500 hover:text-gold-400 transition-colors text-xs uppercase tracking-wider font-semibold">YouTube</a>
+                </div>
+
+                <!-- Links Institucionais -->
+                <div class="flex items-center space-x-6 text-xs font-mono text-zinc-500">
+                    <a href="#" class="hover:text-gold-500 transition-colors">Termos de Uso</a>
+                    <span class="text-zinc-800">•</span>
+                    <a href="politica-privacidade" class="hover:text-gold-500 transition-colors">Política de Privacidade e Cookies</a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Botão Voltar ao Topo -->
+    <button @click="window.scrollTo({top: 0, behavior: 'smooth'})"
+            x-data="{ scrolled: false }"
+            @scroll.window="scrolled = (window.pageYOffset > 300)"
+            x-show="scrolled"
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 translate-y-10"
+            x-transition:enter-end="opacity-100 translate-y-0"
+            x-transition:leave="transition ease-in duration-300"
+            x-transition:leave-start="opacity-100 translate-y-0"
+            x-transition:leave-end="opacity-0 translate-y-10"
+            class="fixed bottom-8 right-8 z-[100] p-3 bg-zinc-900/90 dark:bg-white/90 text-white dark:text-zinc-900 rounded-full shadow-2xl backdrop-blur-md hover:scale-110 hover:bg-gold-600 dark:hover:bg-gold-500 transition-all border border-zinc-700 dark:border-white/20"
+            aria-label="Voltar ao topo" style="display: none;">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+</body>
+</html>

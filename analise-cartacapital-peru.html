@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-BR" :class="{ 'dark': darkMode }"
+    x-data="{ darkMode: localStorage.getItem('darkMode') === 'true', searchOpen: false }"
+    x-init="$watch('darkMode', val => localStorage.setItem('darkMode', val))">
+
+<head>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <script>
+        (function () {
+            var savedTheme = localStorage.getItem('darkMode');
+            if (savedTheme === 'true') {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        })();
+    </script>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VN08M1DX3Q"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-VN08M1DX3Q');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <title>Autópsia: A Falácia da Herança e a Agenda Oculta no Peru | Voz Direita</title>
+
+    <!-- Meta tags SEO -->
+    <meta name="description" content="Análise tática sobre a eleição peruana e o voto dos expatriados no Brasil. Entenda como a esquerda usa o filtro estatístico para esconder sua rejeição.">
+    <meta name="keywords"
+        content="Eleições Peru, Keiko Fujimori, Esquerda Neototalitária, Progressismo Autoritário, CartaCapital, Imigração, Engenharia Social Coercitiva, Foro de São Paulo, Jander Nunes, Voz Direita">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        playfair: ['"Playfair Display"', 'serif'],
+                        jakarta: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    colors: {
+                        gold: {
+                            50: '#fdfcf7',
+                            100: '#f9f6e6',
+                            200: '#f2eabf',
+                            300: '#e5d78d',
+                            400: '#d5be5a',
+                            500: '#c2a233',
+                            600: '#a38124',
+                            700: '#80611c',
+                            800: '#604617',
+                            900: '#463312',
+                            950: '#2b1e0a',
+                        },
+                        intel: {
+                            900: '#0b0f19',
+                            950: '#030712',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .glow-sphere {
+            filter: blur(140px);
+            pointer-events: none;
+        }
+
+        ::selection {
+            background-color: rgba(194, 162, 51, 0.3);
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body
+    class="font-jakarta bg-slate-50 text-zinc-900 dark:bg-intel-950 dark:text-stone-300 transition-colors duration-300 min-h-screen flex flex-col overflow-x-hidden">
+
+    <!-- GLOW SPHERES DE ATMOSFERA -->
+    <div
+        class="absolute top-1/4 left-10 w-[500px] h-[500px] rounded-full bg-blue-900/10 dark:bg-blue-900/5 glow-sphere -z-10">
+    </div>
+    <div class="absolute top-2/3 right-10 w-[600px] h-[600px] rounded-full bg-gold-900/5 glow-sphere -z-10"></div>
+
+    <!-- HEADER (CABEÇALHO STICKY) -->
+    <header
+        class="fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-zinc-200/20 dark:border-zinc-800/10 backdrop-blur-md bg-white/70 dark:bg-intel-950/75 shadow-sm dark:shadow-none">
+        <div class="max-w-[1600px] w-full mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+
+            <!-- Logo (Esquerda) -->
+            <div class="flex items-center">
+                <a href="index.html" id="logo-nav" class="flex items-center space-x-0.5 group">
+                    <span
+                        class="font-light text-2xl tracking-wide text-zinc-500 dark:text-zinc-400 transition-colors duration-300 font-jakarta">Voz</span>
+                    <span
+                        class="font-extrabold text-2xl tracking-tight text-zinc-900 dark:text-white font-playfair italic group-hover:text-gold-500 transition-colors duration-300">Direita</span>
+                </a>
+            </div>
+
+            <!-- Menu / Botão de Voltar (Centro) -->
+            <div class="hidden md:block">
+                <a href="index.html" id="btn-back-center"
+                    class="flex items-center space-x-2 text-xs font-semibold uppercase tracking-widest text-zinc-500 dark:text-zinc-400 hover:text-gold-600 dark:hover:text-gold-400 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gold-500" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                    <span>Voltar ao QG de Análises</span>
+                </a>
+            </div>
+
+            <!-- Ações (Direita) -->
+            <div class="flex items-center space-x-4">
+
+                <!-- Botão de Voltar (Mobile) -->
+                <a href="index.html" id="btn-back-mobile"
+                    class="p-2 md:hidden text-zinc-600 dark:text-zinc-300 hover:text-gold-500 transition-colors"
+                    aria-label="Voltar ao QG">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                </a>
+
+                <!-- Botão Alternador de Tema -->
+                <button @click="darkMode = !darkMode" id="btn-theme-toggle"
+                    class="p-2 text-zinc-600 dark:text-zinc-300 hover:text-gold-500 transition-colors focus:outline-none"
+                    aria-label="Alternar tema">
+                    <svg x-show="darkMode" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" x-cloak>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m2.828-9.9a5 5 0 117.07 7.07l-.707-.707M6.343 6.343l.707.707m9.9 9.9l.707-.707" />
+                    </svg>
+                    <svg x-show="!darkMode" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" x-cloak>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO EDITORIAL PREMIUM -->
+    <section class="relative w-full h-[85vh] min-h-[600px] flex items-end justify-center overflow-hidden bg-black">
+        <!-- Imagem de Fundo Completa com Efeito Parallax Simulado -->
+        <div class="absolute inset-0 w-full h-full">
+            <img src="assets/capa_eleicao_peru.png" alt="Imagem de Destaque - Eleições Peru" class="w-full h-full object-cover object-top opacity-60 dark:opacity-40 transform scale-105 transition-transform duration-[10s] hover:scale-100">
+            <!-- Overlay de Gradiente Escuro para Leitura -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-transparent"></div>
+        </div>
+
+        <!-- Conteúdo do Hero -->
+        <div class="relative z-10 max-w-[1200px] w-full px-8 pb-16 md:pb-24">
+            
+            <!-- Tags e Metadados Acima do Título -->
+            <div class="flex items-center space-x-4 mb-6">
+                <span class="px-3 py-1 bg-gold-600/90 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-widest rounded-sm shadow-lg">Análise de Mídia</span>
+                <span class="text-zinc-300 text-xs font-mono tracking-wider flex items-center">
+                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    Tempo de Leitura: 5 min
+                </span>
+            </div>
+
+            <!-- Título Gigante e Impactante -->
+            <h1 class="font-playfair text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white leading-[1.1] mb-6 drop-shadow-2xl max-w-4xl">
+                A Falácia da Herança e a Engenharia Narrativa
+            </h1>
+            
+            <!-- Subtítulo / Gancho -->
+            <h2 class="font-jakarta text-xl md:text-2xl text-zinc-300 font-light max-w-3xl leading-relaxed border-l-4 border-gold-500 pl-6 drop-shadow-lg">
+                Como a mídia de esquerda utiliza Adjetivos de Mancha e a falácia da associação para mascarar a rejeição ao Foro de São Paulo entre os expatriados.
+            </h2>
+            
+        </div>
+    </section>
+
+    <!-- ÁREA DE CONTEÚDO PRINCIPAL -->
+    <main class="relative z-20 flex-grow bg-slate-50 dark:bg-[#0a0a0a] transition-colors duration-300">
+        
+        <div class="max-w-[1400px] w-full px-4 sm:px-8 mx-auto py-16 md:py-24 grid grid-cols-1 lg:grid-cols-12 gap-16">
+            
+            <!-- SIDEBAR ESQUERDA (Autor e Compartilhamento) -->
+            <aside class="hidden lg:block lg:col-span-3">
+                <div class="sticky top-32 space-y-10">
+                    
+                    <!-- Perfil Premium do Autor -->
+                    <div class="bg-white dark:bg-zinc-900/40 border border-zinc-200 dark:border-white/5 rounded-2xl p-6 text-center shadow-xl backdrop-blur-sm">
+                        <div class="relative w-24 h-24 mx-auto mb-4">
+                            <div class="absolute inset-0 bg-gold-500 rounded-full animate-pulse opacity-20"></div>
+                            <img src="assets/jander_nunes_profile.webp" alt="Jander Nunes" class="relative w-full h-full rounded-full object-cover border-2 border-gold-500/50 shadow-md">
+                        </div>
+                        <h3 class="font-playfair text-xl font-bold text-zinc-900 dark:text-white mb-1">Jander Nunes</h3>
+                        <p class="text-xs font-mono uppercase tracking-widest text-gold-600 dark:text-gold-400 mb-4">Estrategista Chefe</p>
+                        <p class="text-sm font-light text-zinc-600 dark:text-zinc-400 italic">"Desconstruindo a hegemonia cultural através da lógica implacável."</p>
+                    </div>
+
+                    <!-- Indicador de Progresso (Simulado) e Links -->
+                    <div class="hidden xl:block">
+                        <h4 class="text-xs font-bold uppercase tracking-widest text-zinc-400 mb-4 border-b border-zinc-200 dark:border-zinc-800 pb-2">Índice da Autópsia</h4>
+                        <ul class="space-y-3 text-sm font-jakarta text-zinc-500 dark:text-zinc-400">
+                            <li><a href="#artigo-inicio" class="hover:text-gold-500 transition-colors flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-gold-500 mr-2"></span> A Manchete Original</a></li>
+                            <li><a href="#realidade-oculta" class="hover:text-gold-500 transition-colors flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-zinc-700 mr-2"></span> A Realidade Oculta</a></li>
+                            <li><a href="#diagnostico" class="hover:text-gold-500 transition-colors flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-zinc-700 mr-2"></span> A Ação Neototalitária</a></li>
+                            <li><a href="#manual" class="hover:text-gold-500 transition-colors flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-zinc-700 mr-2"></span> Arma Intelectual</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </aside>
+
+            <!-- COLUNA CENTRAL (O Artigo) -->
+            <div class="lg:col-span-8 2xl:col-span-7 space-y-12">
+
+                <!-- 1. A MANCHETE OFICIAL -->
+                <article id="artigo-inicio" class="prose prose-zinc dark:prose-invert max-w-none text-lg md:text-xl leading-relaxed font-jakarta font-light text-zinc-800 dark:text-zinc-300 scroll-mt-24
+                    prose-p:mb-8 prose-strong:text-zinc-900 dark:prose-strong:text-white prose-strong:font-semibold">
+                    
+                    
+                    <!-- Player de Áudio -->
+                    <div class="mb-12 p-6 bg-zinc-100 dark:bg-zinc-900/50 rounded-2xl border border-zinc-200 dark:border-zinc-800 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="p-2 bg-gold-600/20 text-gold-600 dark:text-gold-500 rounded-full">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-playfair text-lg font-bold text-zinc-900 dark:text-white">Ouvir Dossiê Tático</h4>
+                                <p class="text-xs font-mono text-zinc-500">Resumo em áudio da autópsia</p>
+                            </div>
+                        </div>
+                        <audio controls class="w-full sm:w-auto h-10 outline-none" src="audio-peru.mp3"></audio>
+                    </div>
+
+                    <h3 class="font-playfair text-3xl font-bold text-zinc-900 dark:text-white mb-6 border-l-4 border-gold-500 pl-4">
+
+                        1. A MANCHETE OFICIAL E O DOSSIÊ DA FONTE
+                    </h3>
+                    
+                    <div class="p-6 bg-zinc-100 dark:bg-zinc-900/50 rounded-lg border border-zinc-200 dark:border-zinc-800 mb-8 italic">
+                        "Como está a disputa entre Keiko Fujimori e Sánchez entre peruanos de 11 capitais brasileiras"
+                    </div>
+                    
+                    <p>
+                        <strong>Dossiê da Fonte:</strong> A CartaCapital, alinhada à estratégia do Foro de São Paulo, escolhe esse tema para mascarar a forte rejeição à esquerda na América Latina. O veículo dilui o fato de que peruanos refugiados no Brasil votam massivamente contra o socialismo, e tenta validar a agenda globalista usando táticas de deslegitimação.
+                    </p>
+
+                </article>
+
+                <!-- 2. A AUTÓPSIA DO FATO -->
+                <article id="realidade-oculta" class="prose prose-zinc dark:prose-invert max-w-none text-lg md:text-xl leading-relaxed font-jakarta font-light text-zinc-800 dark:text-zinc-300 scroll-mt-24
+                    prose-p:mb-8 prose-strong:text-zinc-900 dark:prose-strong:text-white prose-strong:font-semibold mt-16">
+                    
+                    <h3 class="font-playfair text-3xl font-bold text-zinc-900 dark:text-white mb-6 border-l-4 border-gold-500 pl-4">
+                        2. A AUTÓPSIA DO FATO (A Realidade Oculta)
+                    </h3>
+                    
+                    <ul class="space-y-4 list-disc list-inside">
+
+                        
+                        
+                        <li><strong>Omissões Estratégicas:</strong> O que o texto não diz? Oculta que os expatriados fugiram justamente do colapso econômico causado por políticas de esquerda, focando apenas na matemática de "11 capitais" para desidratar o impacto político dessa diáspora.</li>
+                        <li><strong>Adjetivos de Mancha (Herança e Associação):</strong> Identificamos a falácia lógica de "associação". O texto rotineiramente lembra do parentesco de Keiko para invalidar a direita. Expondo a falácia: O autor não tem argumentos contra as ideias da candidata, por isso recorre à tentativa de destruir sua honra através do passado de terceiros.</li>
+                        <li><strong>Identificação de Frames:</strong> A esquerda é sempre emoldurada em tom neutro ou democrático, enquanto a direita sofre o enquadramento pejorativo para isolar os conservadores.</li>
+
+
+                        
+
+</ul>
+
+                </article>
+
+                <!-- Pull Quote Elegante -->
+                <blockquote class="relative my-16 p-8 md:p-12 text-center bg-zinc-100/50 dark:bg-zinc-900/30 rounded-3xl border border-zinc-200/50 dark:border-white/5 shadow-inner">
+                    <svg class="absolute top-4 left-6 w-12 h-12 text-gold-500/20" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                    <p class="font-playfair text-2xl md:text-3xl font-medium text-zinc-900 dark:text-gold-400 italic mb-0 leading-tight">
+                        "O autor não tem argumentos técnicos contra as ideias da direita, por isso recorre covardemente à tentativa de destruir a honra da candidata através do passado de terceiros."
+                    </p>
+                </blockquote>
+
+                <!-- 3. O DIAGNÓSTICO DA TÁTICA -->
+                <article id="diagnostico" class="prose prose-zinc dark:prose-invert max-w-none text-lg md:text-xl leading-relaxed font-jakarta font-light text-zinc-800 dark:text-zinc-300 scroll-mt-24
+                    prose-p:mb-8 prose-strong:text-zinc-900 dark:prose-strong:text-white prose-strong:font-semibold">
+                    
+                    <h3 class="font-playfair text-3xl font-bold text-zinc-900 dark:text-white mb-6 border-l-4 border-gold-500 pl-4">
+                        3. O DIAGNÓSTICO DA TÁTICA (A Ação Neototalitária)
+                    </h3>
+
+                    
+                    <p>
+                        A estrutura desta manchete e o corpo da reportagem são a prova cabal da atuação da <strong>Esquerda Neototalitária</strong> e sua manipulação semântica. O <strong>Progressismo Autoritário</strong> precisa, a todo custo, impedir que o público conecte o fracasso da economia socialista latino-americana à forte rejeição que ele sofre nas urnas pelos próprios expatriados que se refugiaram no Brasil.
+                    </p>
+                    <p>
+                        O uso do <strong>Filtro Estatístico Asséptico</strong> anestesia a verdade: a esquerda perde entre aqueles que precisaram abandonar seus países para não passar fome. Transformar isso em um mero balanço numérico entre capitais é pura <strong>Engenharia Social Coercitiva</strong>.
+                    </p>
+
+    
+
+                </article>
+
+                <!-- 4. MANUAL DE DEFESA -->
+                <div id="manual" class="mt-16 space-y-12 scroll-mt-24">
+                    
+                    <!-- Análise Box (Glassmorphism Escuro) -->
+                    <div class="relative bg-zinc-900 dark:bg-black border border-zinc-800 dark:border-zinc-800/50 shadow-2xl rounded-2xl p-8 md:p-12 text-white overflow-hidden">
+                        
+                        <!-- Padrão Blueprint Sutil no Fundo -->
+                        <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:20px_20px]"></div>
+                        
+                        <div class="relative z-10">
+                            <div class="flex items-center space-x-3 mb-8 border-b border-zinc-800 pb-4">
+                                <div class="p-2 bg-red-600/20 text-red-500 rounded">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                                </div>
+                                <h3 class="font-playfair text-3xl font-bold">4. MANUAL DE DEFESA (Arma Intelectual)</h3>
+                            </div>
+                            
+                            <p class="text-xl font-light text-zinc-300 leading-relaxed italic border-l-2 border-gold-600 pl-6">
+                                
+                                "Sempre que a mídia chamar um candidato de direita de 'filho de ditador' ou 'ligado a', pergunte: 'Vocês não têm argumentos contra as propostas econômicas, então precisam atacar a família?' Além disso, esconder que os peruanos fugiram da miséria e votaram na direita no Brasil prova apenas uma coisa: quem vive o socialismo na pele, vota contra ele para sobreviver. É pura hipocrisia neototalitária."
+
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Fonte do Artigo -->
+                    <div class="mt-12 text-right">
+                        <a href="https://www.cartacapital.com.br/cartaexpressa/como-esta-a-disputa-entre-sanchez-e-keiko-fujimori-entre-peruanos-de-11-capitais-brasileiras/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm font-mono text-zinc-500 hover:text-gold-500 transition-colors group">
+                            <span>Ler matéria com viés neototalitário</span>
+                            <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+<!-- FOOTER (RODAPÉ) -->
+    <footer class="bg-black border-t border-zinc-900 text-zinc-400 py-16 transition-colors duration-300 relative z-30">
+        <div class="max-w-[1600px] w-full mx-auto px-6 lg:px-12">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+
+                <!-- Logo & Copyright -->
+                <div class="flex flex-col items-center md:items-start space-y-2">
+                    <div class="flex items-center space-x-0.5">
+                        <span class="font-light text-xl tracking-wide text-zinc-500 font-jakarta">Voz</span>
+                        <span
+                            class="font-extrabold text-xl tracking-tight text-white font-playfair italic">Direita</span>
+                    </div>
+                    <p
+                        class="text-[10px] font-mono text-zinc-600 dark:text-zinc-500 tracking-wide text-center md:text-left">
+                        Copyright &copy; 2026 Voz Direita. Todos os direitos reservados.
+                    </p>
+                </div>
+
+                <!-- Links de Redes Sociais -->
+                <div class="flex items-center space-x-6">
+                    <a href="#"
+                        class="text-zinc-500 hover:text-gold-400 transition-colors text-xs uppercase tracking-wider font-semibold">X
+                        (antigo Twitter)</a>
+                    <a href="#"
+                        class="text-zinc-500 hover:text-gold-400 transition-colors text-xs uppercase tracking-wider font-semibold">Telegram</a>
+                    <a href="#"
+                        class="text-zinc-500 hover:text-gold-400 transition-colors text-xs uppercase tracking-wider font-semibold">YouTube</a>
+                </div>
+
+                <!-- Links Institucionais -->
+                <div class="flex items-center space-x-6 text-xs font-mono text-zinc-500">
+                    <a href="#" class="hover:text-gold-500 transition-colors">Termos de Uso</a>
+                    <span class="text-zinc-800">•</span>
+                    <a href="#" class="hover:text-gold-500 transition-colors">Políticas de Privacidade</a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Botão Voltar ao Topo -->
+    <button @click="window.scrollTo({top: 0, behavior: 'smooth'})"
+            x-data="{ scrolled: false }"
+            @scroll.window="scrolled = (window.pageYOffset > 300)"
+            x-show="scrolled"
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 translate-y-10"
+            x-transition:enter-end="opacity-100 translate-y-0"
+            x-transition:leave="transition ease-in duration-300"
+            x-transition:leave-start="opacity-100 translate-y-0"
+            x-transition:leave-end="opacity-0 translate-y-10"
+            class="fixed bottom-8 right-8 z-[100] p-3 bg-zinc-900/90 dark:bg-white/90 text-white dark:text-zinc-900 rounded-full shadow-2xl backdrop-blur-md hover:scale-110 hover:bg-gold-600 dark:hover:bg-gold-500 transition-all border border-zinc-700 dark:border-white/20"
+            aria-label="Voltar ao topo" style="display: none;">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+</body>
+
+</html>

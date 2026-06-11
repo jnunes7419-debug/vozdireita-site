@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="pt-BR" :class="{ 'dark': darkMode }"
+    x-data="{ darkMode: localStorage.getItem('darkMode') === 'true', searchOpen: false }"
+    x-init="$watch('darkMode', val => localStorage.setItem('darkMode', val))">
+
+<head>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <script>
+        (function () {
+            var savedTheme = localStorage.getItem('darkMode');
+            if (savedTheme === 'true') {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        })();
+    </script>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VN08M1DX3Q"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-VN08M1DX3Q');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <title>Autópsia: A Armadilha do Cavalo de Troia e o PL 1811/2026 | Voz Direita</title>
+
+    <!-- Meta tags SEO -->
+    <meta name="description"
+        content="Análise tática do PL 1811/2026. Entenda como a tornozeleira rosa atua como um Cavalo de Troia ideológico para rachar a base conservadora em ano eleitoral.">
+    <meta name="keywords"
+        content="Voz Direita, Tornozeleira Rosa, O Globo, Coronel Fernanda, Engenharia Social Coercitiva, Esquerda Neototalitária, Progressismo Autoritário, Neototalitarismo, Jander Nunes, Segurança Pública">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        playfair: ['"Playfair Display"', 'serif'],
+                        jakarta: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    colors: {
+                        gold: {
+                            50: '#fdfcf7',
+                            100: '#f9f6e6',
+                            200: '#f2eabf',
+                            300: '#e5d78d',
+                            400: '#d5be5a',
+                            500: '#c2a233',
+                            600: '#a38124',
+                            700: '#80611c',
+                            800: '#604617',
+                            900: '#463312',
+                            950: '#2b1e0a',
+                        },
+                        intel: {
+                            900: '#0b0f19',
+                            950: '#030712',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .glow-sphere {
+            filter: blur(140px);
+            pointer-events: none;
+        }
+
+        ::selection {
+            background-color: rgba(194, 162, 51, 0.3);
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body
+    class="font-jakarta bg-slate-50 text-zinc-900 dark:bg-intel-950 dark:text-stone-300 transition-colors duration-300 min-h-screen flex flex-col overflow-x-hidden">
+
+    <!-- GLOW SPHERES DE ATMOSFERA -->
+    <div
+        class="absolute top-1/4 left-10 w-[500px] h-[500px] rounded-full bg-blue-900/10 dark:bg-blue-900/5 glow-sphere -z-10">
+    </div>
+    <div class="absolute top-2/3 right-10 w-[600px] h-[600px] rounded-full bg-gold-900/5 glow-sphere -z-10"></div>
+
+    <!-- HEADER (CABEÇALHO STICKY) -->
+    <header
+        class="fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-zinc-200/20 dark:border-zinc-800/10 backdrop-blur-md bg-white/70 dark:bg-intel-950/75 shadow-sm dark:shadow-none">
+        <div class="max-w-[1600px] w-full mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+
+            <!-- Logo (Esquerda) -->
+            <div class="flex items-center">
+                <a href="index.html" id="logo-nav" class="flex items-center space-x-0.5 group">
+                    <span
+                        class="font-light text-2xl tracking-wide text-zinc-500 dark:text-zinc-400 transition-colors duration-300 font-jakarta">Voz</span>
+                    <span
+                        class="font-extrabold text-2xl tracking-tight text-zinc-900 dark:text-white font-playfair italic group-hover:text-gold-500 transition-colors duration-300">Direita</span>
+                </a>
+            </div>
+
+            <!-- Menu / Botão de Voltar (Centro) -->
+            <div class="hidden md:block">
+                <a href="index.html" id="btn-back-center"
+                    class="flex items-center space-x-2 text-xs font-semibold uppercase tracking-widest text-zinc-500 dark:text-zinc-400 hover:text-gold-600 dark:hover:text-gold-400 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gold-500" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                    <span>Voltar ao QG de Análises</span>
+                </a>
+            </div>
+
+            <!-- Ações (Direita) -->
+            <div class="flex items-center space-x-4">
+
+                <!-- Botão de Voltar (Mobile) -->
+                <a href="index.html" id="btn-back-mobile"
+                    class="p-2 md:hidden text-zinc-600 dark:text-zinc-300 hover:text-gold-500 transition-colors"
+                    aria-label="Voltar ao QG">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                </a>
+
+                <!-- Botão Alternador de Tema -->
+                <button @click="darkMode = !darkMode" id="btn-theme-toggle"
+                    class="p-2 text-zinc-600 dark:text-zinc-300 hover:text-gold-500 transition-colors focus:outline-none"
+                    aria-label="Alternar tema">
+                    <svg x-show="darkMode" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" x-cloak>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m2.828-9.9a5 5 0 117.07 7.07l-.707-.707M6.343 6.343l.707.707m9.9 9.9l.707-.707" />
+                    </svg>
+                    <svg x-show="!darkMode" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" x-cloak>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO EDITORIAL PREMIUM -->
+    <section class="relative w-full h-[85vh] min-h-[600px] flex items-end justify-center overflow-hidden bg-black">
+        <!-- Imagem de Fundo Completa com Efeito Parallax Simulado -->
+        <div class="absolute inset-0 w-full h-full">
+            <img src="assets/sabotagem_ype.webp" alt="Imagem de Destaque" class="w-full h-full object-cover opacity-60 dark:opacity-40 transform scale-105 transition-transform duration-[10s] hover:scale-100">
+            <!-- Overlay de Gradiente Escuro para Leitura -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-transparent"></div>
+        </div>
+
+        <!-- Conteúdo do Hero -->
+        <div class="relative z-10 max-w-[1200px] w-full px-8 pb-16 md:pb-24">
+            
+            <!-- Tags e Metadados Acima do Título -->
+            <div class="flex items-center space-x-4 mb-6">
+                <span class="px-3 py-1 bg-gold-600/90 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-widest rounded-sm shadow-lg">Aparelhamento Burocrático</span>
+                <span class="text-zinc-300 text-xs font-mono tracking-wider flex items-center">
+                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    Tempo de Leitura: 6 min
+                </span>
+            </div>
+
+            <!-- Título Gigante e Impactante -->
+            <h1 class="font-playfair text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white leading-[1.1] mb-6 drop-shadow-2xl max-w-4xl">
+                O Terror Burocrático: O Caso Ypê
+            </h1>
+            
+            <!-- Subtítulo / Gancho -->
+            <h2 class="font-jakarta text-xl md:text-2xl text-zinc-300 font-light max-w-3xl leading-relaxed border-l-4 border-gold-500 pl-6 drop-shadow-lg">
+                Como o progressismo autoritário embala medidas de controle social em falsas pautas de proteção, fragmentando a base conservadora.
+            </h2>
+            
+        </div>
+    </section>
+
+    <!-- ÁREA DE CONTEÚDO PRINCIPAL -->
+    <main class="relative z-20 flex-grow bg-slate-50 dark:bg-[#0a0a0a] transition-colors duration-300">
+        
+        <div class="max-w-[1400px] w-full px-4 sm:px-8 mx-auto py-16 md:py-24 grid grid-cols-1 lg:grid-cols-12 gap-16">
+            
+            <!-- SIDEBAR ESQUERDA (Autor e Compartilhamento) -->
+            <aside class="hidden lg:block lg:col-span-3">
+                <div class="sticky top-32 space-y-10">
+                    
+                    <!-- Perfil Premium do Autor -->
+                    <div class="bg-white dark:bg-zinc-900/40 border border-zinc-200 dark:border-white/5 rounded-2xl p-6 text-center shadow-xl backdrop-blur-sm">
+                        <div class="relative w-24 h-24 mx-auto mb-4">
+                            <div class="absolute inset-0 bg-gold-500 rounded-full animate-pulse opacity-20"></div>
+                            <img src="assets/jander_nunes_profile.webp" alt="Jander Nunes" class="relative w-full h-full rounded-full object-cover border-2 border-gold-500/50 shadow-md">
+                        </div>
+                        <h3 class="font-playfair text-xl font-bold text-zinc-900 dark:text-white mb-1">Jander Nunes</h3>
+                        <p class="text-xs font-mono uppercase tracking-widest text-gold-600 dark:text-gold-400 mb-4">Estrategista Chefe</p>
+                        <p class="text-sm font-light text-zinc-600 dark:text-zinc-400 italic">"Desconstruindo a hegemonia cultural através da lógica implacável."</p>
+                    </div>
+
+                    <!-- Indicador de Progresso (Simulado) e Links -->
+                    <div class="hidden xl:block">
+                        <h4 class="text-xs font-bold uppercase tracking-widest text-zinc-400 mb-4 border-b border-zinc-200 dark:border-zinc-800 pb-2">Índice da Autópsia</h4>
+                        <ul class="space-y-3 text-sm font-jakarta text-zinc-500 dark:text-zinc-400">
+                            <li class="hover:text-gold-500 cursor-pointer transition-colors flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-gold-500 mr-2"></span> A Narrativa</li>
+                            <li class="hover:text-gold-500 cursor-pointer transition-colors flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-zinc-700 mr-2"></span> A Armadilha</li>
+                            <li class="hover:text-gold-500 cursor-pointer transition-colors flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-zinc-700 mr-2"></span> O Resumo</li>
+                            <li class="hover:text-gold-500 cursor-pointer transition-colors flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-zinc-700 mr-2"></span> O Veredito</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </aside>
+
+            <!-- COLUNA CENTRAL (O Artigo) -->
+            <div class="lg:col-span-8 2xl:col-span-7 space-y-12">
+
+                
+                    <!-- O CONTEÚDO DO ARTIGO -->
+                    <div class="prose prose-lg prose-zinc dark:prose-invert max-w-none font-jakarta">
+
+                        <h2 class="text-gold-600 dark:text-gold-500 font-playfair font-bold mt-12 mb-6">
+                            1. A MANCHETE OFICIAL (A Isca)
+                        </h2>
+                        <blockquote class="border-l-4 border-gold-500 pl-6 my-8 italic text-zinc-700 dark:text-zinc-300 bg-white/50 dark:bg-zinc-900/50 p-6 rounded-r-lg shadow-sm">
+                            <p class="font-bold text-xl mb-2 text-zinc-900 dark:text-white">"Ypê: final 1 no lote identifica produtos feitos em Amparo, onde duas fábricas seguem paradas"</p>
+                            <p class="text-base text-zinc-500 dark:text-zinc-400 mt-2">— A Falsa Premissa: Um mero rigor sanitário técnico e neutro da Anvisa visando a proteção exclusiva da saúde pública.</p>
+                        </blockquote>
+
+                        <h2 class="text-gold-600 dark:text-gold-500 font-playfair font-bold mt-12 mb-6">
+                            2. A AUTÓPSIA DO FATO (A Realidade Oculta)
+                        </h2>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start">
+                                <span class="text-gold-500 mr-3 text-xl font-bold">•</span>
+                                <span><strong>A Punição Financeira:</strong> A narrativa estatal omite intencionalmente que a família Beira, proprietária da Ypê, doou R$ 1,5 milhão como pessoa física para a campanha de Jair Bolsonaro em 2022. Esta é a verdadeira "contaminação" que o sistema quer extirpar.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-gold-500 mr-3 text-xl font-bold">•</span>
+                                <span><strong>Histeria Microbiológica:</strong> Utilizam jargões técnicos alarmistas ("Pseudomonas aeruginosa") para gerar pânico e destruir a reputação de uma empresa nacional, ignorando que os lotes já haviam sido retidos pelo rigoroso controle de qualidade interno da própria fábrica.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-gold-500 mr-3 text-xl font-bold">•</span>
+                                <span><strong>A Agência como Braço Armado:</strong> A paralisação do complexo de Amparo (que concentra a maior parte do catálogo de 450 produtos) não é precaução de saúde; é uma retaliação calculada e um aviso claro ao empresariado brasileiro que ousar financiar a oposição política.</span>
+                            </li>
+                        </ul>
+
+                        <h2 class="text-gold-600 dark:text-gold-500 font-playfair font-bold mt-12 mb-6">
+                            3. O DIAGNÓSTICO DA TÁTICA (A Ação Neototalitária)
+                        </h2>
+                        <p class="mb-6 leading-relaxed">
+                            A <strong>Esquerda Neototalitária</strong> instrumentaliza agências reguladoras (como a Anvisa) para operarem como verdadeiras milícias burocráticas. Sob o escudo irrefutável e covarde da "proteção sanitária", eles aplicam a <strong>Engenharia Social Coercitiva</strong> para perseguir e sangrar adversários ideológicos. Quando o judiciário trabalhista falha em intimidar (como tentaram com a acusação de "assédio eleitoral"), acionam a vigilância sanitária. O objetivo não é limpar detergentes, é sujar biografias e estipular o terror burocrático: qualquer empresário que não se ajoelhar ao <strong>Progressismo Autoritário</strong> terá suas fábricas lacradas pelo peso do Estado.
+                        </p>
+
+                        <div class="my-12 p-8 bg-gradient-to-br from-zinc-100 to-white dark:from-intel-900 dark:to-zinc-900 border border-zinc-200 dark:border-white/10 rounded-2xl shadow-xl relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-32 h-32 bg-gold-500/10 rounded-full blur-3xl"></div>
+                            
+                            <h2 class="text-gold-600 dark:text-gold-500 font-playfair font-bold mb-6 flex items-center">
+                                <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                                4. O MANUAL DE DEFESA (Arma Intelectual)
+                            </h2>
+                            <p class="text-xl md:text-2xl font-playfair italic text-zinc-800 dark:text-zinc-200 leading-relaxed mb-6">
+                                "A Anvisa paralisar a Ypê logo após a empresa ter doado R$ 1,5 milhão a Bolsonaro em 2022 não é coincidência, é retaliação. A Esquerda Neototalitária usa o Estado não para proteger sua saúde, mas para quebrar financeiramente quem apoia a oposição. O nome disso é perseguição política."
+                            </p>
+                            <button class="flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-white bg-gold-600 hover:bg-gold-500 px-6 py-3 rounded-lg transition-all shadow-lg hover:shadow-gold-500/25" onclick="navigator.clipboard.writeText('A Anvisa paralisar a Ypê logo após a empresa ter doado R$ 1,5 milhão a Bolsonaro em 2022 não é coincidência, é retaliação. A Esquerda Neototalitária usa o Estado não para proteger sua saúde, mas para quebrar financeiramente quem apoia a oposição. O nome disso é perseguição política.')">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                                <span>Copiar para WhatsApp</span>
+                            </button>
+                        </div>
+                    </div>
+
+                </article>
+
+
+
+            </div>
+
+        </div>
+
+    </main>
+<!-- FOOTER (RODAPÉ) -->
+    <footer class="bg-black border-t border-zinc-900 text-zinc-400 py-16 transition-colors duration-300 relative z-30">
+        <div class="max-w-[1600px] w-full mx-auto px-6 lg:px-12">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+
+                <!-- Logo & Copyright -->
+                <div class="flex flex-col items-center md:items-start space-y-2">
+                    <div class="flex items-center space-x-0.5">
+                        <span class="font-light text-xl tracking-wide text-zinc-500 font-jakarta">Voz</span>
+                        <span
+                            class="font-extrabold text-xl tracking-tight text-white font-playfair italic">Direita</span>
+                    </div>
+                    <p
+                        class="text-[10px] font-mono text-zinc-600 dark:text-zinc-500 tracking-wide text-center md:text-left">
+                        Copyright &copy; 2026 Voz Direita. Todos os direitos reservados.
+                    </p>
+                </div>
+
+                <!-- Links de Redes Sociais -->
+                <div class="flex items-center space-x-6">
+                    <a href="#"
+                        class="text-zinc-500 hover:text-gold-400 transition-colors text-xs uppercase tracking-wider font-semibold">X
+                        (antigo Twitter)</a>
+                    <a href="#"
+                        class="text-zinc-500 hover:text-gold-400 transition-colors text-xs uppercase tracking-wider font-semibold">Telegram</a>
+                    <a href="#"
+                        class="text-zinc-500 hover:text-gold-400 transition-colors text-xs uppercase tracking-wider font-semibold">YouTube</a>
+                </div>
+
+                <!-- Links Institucionais -->
+                <div class="flex items-center space-x-6 text-xs font-mono text-zinc-500">
+                    <a href="#" class="hover:text-gold-500 transition-colors">Termos de Uso</a>
+                    <span class="text-zinc-800">•</span>
+                    <a href="#" class="hover:text-gold-500 transition-colors">Políticas de Privacidade</a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Botão Voltar ao Topo -->
+    <button @click="window.scrollTo({top: 0, behavior: 'smooth'})"
+            x-data="{ scrolled: false }"
+            @scroll.window="scrolled = (window.pageYOffset > 300)"
+            x-show="scrolled"
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 translate-y-10"
+            x-transition:enter-end="opacity-100 translate-y-0"
+            x-transition:leave="transition ease-in duration-300"
+            x-transition:leave-start="opacity-100 translate-y-0"
+            x-transition:leave-end="opacity-0 translate-y-10"
+            class="fixed bottom-8 right-8 z-[100] p-3 bg-zinc-900/90 dark:bg-white/90 text-white dark:text-zinc-900 rounded-full shadow-2xl backdrop-blur-md hover:scale-110 hover:bg-gold-600 dark:hover:bg-gold-500 transition-all border border-zinc-700 dark:border-white/20"
+            aria-label="Voltar ao topo" style="display: none;">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+</body>
+
+</html>

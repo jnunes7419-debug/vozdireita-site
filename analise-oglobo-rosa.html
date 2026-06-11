@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="pt-BR" :class="{ 'dark': darkMode }"
+    x-data="{ darkMode: localStorage.getItem('darkMode') === 'true', searchOpen: false }"
+    x-init="$watch('darkMode', val => localStorage.setItem('darkMode', val))">
+
+<head>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <script>
+        (function () {
+            var savedTheme = localStorage.getItem('darkMode');
+            if (savedTheme === 'true') {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        })();
+    </script>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VN08M1DX3Q"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-VN08M1DX3Q');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <title>Autópsia: A Armadilha do Cavalo de Troia e o PL 1811/2026 | Voz Direita</title>
+
+    <!-- Meta tags SEO -->
+    <meta name="description"
+        content="Análise tática do PL 1811/2026. Entenda como a tornozeleira rosa atua como um Cavalo de Troia ideológico para rachar a base conservadora em ano eleitoral.">
+    <meta name="keywords"
+        content="Voz Direita, Tornozeleira Rosa, O Globo, Coronel Fernanda, Engenharia Social Coercitiva, Esquerda Neototalitária, Progressismo Autoritário, Neototalitarismo, Jander Nunes, Segurança Pública">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        playfair: ['"Playfair Display"', 'serif'],
+                        jakarta: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    colors: {
+                        gold: {
+                            50: '#fdfcf7',
+                            100: '#f9f6e6',
+                            200: '#f2eabf',
+                            300: '#e5d78d',
+                            400: '#d5be5a',
+                            500: '#c2a233',
+                            600: '#a38124',
+                            700: '#80611c',
+                            800: '#604617',
+                            900: '#463312',
+                            950: '#2b1e0a',
+                        },
+                        intel: {
+                            900: '#0b0f19',
+                            950: '#030712',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .glow-sphere {
+            filter: blur(140px);
+            pointer-events: none;
+        }
+
+        ::selection {
+            background-color: rgba(194, 162, 51, 0.3);
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body
+    class="font-jakarta bg-slate-50 text-zinc-900 dark:bg-intel-950 dark:text-stone-300 transition-colors duration-300 min-h-screen flex flex-col overflow-x-hidden">
+
+    <!-- GLOW SPHERES DE ATMOSFERA -->
+    <div
+        class="absolute top-1/4 left-10 w-[500px] h-[500px] rounded-full bg-blue-900/10 dark:bg-blue-900/5 glow-sphere -z-10">
+    </div>
+    <div class="absolute top-2/3 right-10 w-[600px] h-[600px] rounded-full bg-gold-900/5 glow-sphere -z-10"></div>
+
+    <!-- HEADER (CABEÇALHO STICKY) -->
+    <header
+        class="fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-zinc-200/20 dark:border-zinc-800/10 backdrop-blur-md bg-white/70 dark:bg-intel-950/75 shadow-sm dark:shadow-none">
+        <div class="max-w-[1600px] w-full mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+
+            <!-- Logo (Esquerda) -->
+            <div class="flex items-center">
+                <a href="index.html" id="logo-nav" class="flex items-center space-x-0.5 group">
+                    <span
+                        class="font-light text-2xl tracking-wide text-zinc-500 dark:text-zinc-400 transition-colors duration-300 font-jakarta">Voz</span>
+                    <span
+                        class="font-extrabold text-2xl tracking-tight text-zinc-900 dark:text-white font-playfair italic group-hover:text-gold-500 transition-colors duration-300">Direita</span>
+                </a>
+            </div>
+
+            <!-- Menu / Botão de Voltar (Centro) -->
+            <div class="hidden md:block">
+                <a href="index.html" id="btn-back-center"
+                    class="flex items-center space-x-2 text-xs font-semibold uppercase tracking-widest text-zinc-500 dark:text-zinc-400 hover:text-gold-600 dark:hover:text-gold-400 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gold-500" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                    <span>Voltar ao QG de Análises</span>
+                </a>
+            </div>
+
+            <!-- Ações (Direita) -->
+            <div class="flex items-center space-x-4">
+
+                <!-- Botão de Voltar (Mobile) -->
+                <a href="index.html" id="btn-back-mobile"
+                    class="p-2 md:hidden text-zinc-600 dark:text-zinc-300 hover:text-gold-500 transition-colors"
+                    aria-label="Voltar ao QG">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                </a>
+
+                <!-- Botão Alternador de Tema -->
+                <button @click="darkMode = !darkMode" id="btn-theme-toggle"
+                    class="p-2 text-zinc-600 dark:text-zinc-300 hover:text-gold-500 transition-colors focus:outline-none"
+                    aria-label="Alternar tema">
+                    <svg x-show="darkMode" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" x-cloak>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m2.828-9.9a5 5 0 117.07 7.07l-.707-.707M6.343 6.343l.707.707m9.9 9.9l.707-.707" />
+                    </svg>
+                    <svg x-show="!darkMode" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" x-cloak>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- CABEÇALHO DA AUTÓPSIA (HERO) -->
+    <section class="relative pt-32 pb-16 w-full overflow-hidden bg-slate-50 dark:bg-zinc-950">
+
+        <!-- Padrão Sutil de Grade Linear -->
+        <div
+            class="absolute inset-0 z-0 bg-[linear-gradient(rgba(0,0,0,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.015)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:30px_30px] opacity-75">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-50 via-slate-50/90 to-slate-50 dark:from-intel-950 dark:via-zinc-950/95 dark:to-zinc-950">
+        </div>
+
+        <!-- Painel de Título -->
+        <div class="relative z-10 max-w-[1600px] w-full mx-auto px-8">
+            <div class="max-w-5xl space-y-4">
+
+                <!-- Tag de Alerta -->
+                <div
+                    class="inline-flex items-center space-x-2 px-3 py-1 bg-red-950/40 border border-red-500/40 rounded text-[10px] sm:text-xs font-mono font-bold text-red-600 dark:text-red-500 uppercase tracking-widest">
+                    <span class="h-1.5 w-1.5 rounded-full bg-red-600 animate-pulse"></span>
+                    <span>INTERCEPTAÇÃO DIÁRIA &nbsp;|&nbsp; ALVO: O GLOBO BRASIL</span>
+                </div>
+
+                <!-- Título Editorial -->
+                <h1
+                    class="font-playfair text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-zinc-900 dark:text-white leading-tight">
+                    A Armadilha do Cavalo de Troia: <br class="hidden md:inline"><span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-gold-400">O PL 1811/2026 e a Divisão da Base Conservadora</span>
+                </h1>
+
+                <!-- Subtítulo -->
+                <p
+                    class="font-playfair text-lg text-zinc-700 dark:text-stone-300 italic font-light max-w-3xl leading-relaxed">
+                    Como o progressismo autoritário e a performática de gênero são instrumentalizados para cindir a
+                    direita e institucionalizar a desmoralização masculina.
+                </p>
+
+                <!-- Metadados -->
+                <div
+                    class="flex flex-wrap items-center gap-6 text-[10px] sm:text-xs font-mono text-zinc-500 dark:text-zinc-400 pt-2">
+                    <div class="flex items-center space-x-1.5">
+                        <span class="h-1 w-1 bg-red-600 rounded-full"></span>
+                        <span>Interceptado em: <strong class="text-zinc-800 dark:text-zinc-300">07 de Junho,
+                                2026</strong></span>
+                    </div>
+                    <div>
+                        <span>Autópsia por <strong class="text-zinc-800 dark:text-zinc-300">Jander Nunes</strong></span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- CORPO DA ANÁLISE -->
+    <main class="relative z-20 flex-grow bg-slate-50 dark:bg-intel-950 transition-colors duration-300">
+
+        <div class="max-w-[1600px] w-full px-8 mx-auto py-12 grid grid-cols-1 lg:grid-cols-12 gap-12">
+
+            <!-- COLUNA DA ESQUERDA (Principal - 8 colunas) -->
+            <div class="lg:col-span-8 space-y-12">
+
+                <!-- PASSO 1: A MANCHETE OFICIAL (A ISCA) -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2 pb-2 border-b border-zinc-200 dark:border-zinc-800">
+                        <span class="px-2 py-0.5 bg-red-600 text-white font-mono text-[10px] font-bold rounded">PASSO
+                            1</span>
+                        <h2 class="font-playfair text-xl font-bold text-zinc-900 dark:text-white">A Manchete Oficial (A
+                            Isca)</h2>
+                    </div>
+
+                    <!-- Bloco Simulador de Portal de Notícias com Imagem e Carimbo -->
+                    <div
+                        class="relative border border-zinc-300 dark:border-zinc-800/80 rounded-2xl overflow-hidden bg-slate-100 dark:bg-zinc-900/20 p-4 md:p-6 shadow-md">
+
+                        <!-- Print Simulador Header -->
+                        <div
+                            class="flex items-center justify-between border-b border-zinc-200/60 dark:border-zinc-800/60 pb-3 mb-4 text-[10px] font-mono text-zinc-400">
+                            <span>📡 INTERCEPTAÇÃO: O GLOBO NOTÍCIAS</span>
+                            <span>20/04/2026</span>
+                        </div>
+
+                        <!-- Área da Imagem 16:9 Escurecida -->
+                        <div
+                            class="relative w-full aspect-video rounded-xl overflow-hidden mb-6 bg-black border border-zinc-300 dark:border-zinc-800">
+                            <img src="assets/tornozeleira_rosa.webp" alt="Monitoramento de Tornozeleira Rosa"
+                                class="w-full h-full object-cover" loading="lazy" decoding="async">
+
+                            <!-- Carimbo Vermelho de Engenharia Social -->
+                            <div
+                                class="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 z-20 pointer-events-none select-none">
+                                <div
+                                    class="border-2 border-red-600 bg-red-950/90 text-red-500 dark:text-red-400 font-mono text-[9px] sm:text-xs font-bold px-3 py-1 rounded shadow-lg tracking-wider uppercase text-center animate-pulse">
+                                    ALERTA DE ENGENHARIA SOCIAL
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Conteúdo da Notícia Simulada -->
+                        <div class="space-y-3 font-sans relative z-10 select-none">
+                            <h3
+                                class="text-xl md:text-2xl font-bold text-zinc-800 dark:text-zinc-100 leading-tight font-playfair">
+                                "Tornozeleira rosa: Projeto de lei busca padronizar monitoramento de acusados de
+                                violência contra a mulher"
+                            </h3>
+                            <p
+                                class="text-xs md:text-sm text-red-600 dark:text-red-400/80 font-mono font-medium italic mt-2">
+                                Falsa Premissa: A imprensa hegemônica e defensores da proposta sugerem que alterar a cor
+                                do dispositivo eletrônico de rastreamento é uma resposta dissuasória eficaz contra
+                                agressores, quando na verdade estetiza e disfarça a falência penal real.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- PASSO 2 & 3: LEITURA RAIO-X -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2 pb-2 border-b border-zinc-200 dark:border-zinc-800">
+                        <span class="px-2 py-0.5 bg-red-600 text-white font-mono text-[10px] font-bold rounded">PASSO 2
+                            & 3</span>
+                        <h2 class="font-playfair text-xl font-bold text-zinc-900 dark:text-white">Mesa de Autópsia: O
+                            Texto Original</h2>
+                    </div>
+
+                    <!-- Caixa de Quarentena -->
+                    <div
+                        class="relative bg-slate-200/50 dark:bg-black/40 border border-zinc-300 dark:border-white/5 rounded-2xl p-6 md:p-8 shadow-inner transition-colors duration-300">
+                        <!-- Badge de Área Interativa -->
+                        <div
+                            class="flex items-center space-x-2 text-[10px] font-mono text-zinc-500 dark:text-zinc-400 uppercase tracking-wider mb-6 border-b border-zinc-300 dark:border-white/5 pb-3">
+                            <span class="text-red-600 dark:text-red-500 font-bold">🔍 LEITURA RAIO-X</span>
+                            <span>•</span>
+                            <span class="text-zinc-600 dark:text-zinc-400">Passe o cursor sobre os trechos destacados
+                                para revelar as táticas</span>
+                        </div>
+
+                        <p
+                            class="font-playfair text-lg md:text-xl text-zinc-800 dark:text-stone-200 leading-loose italic max-w-4xl font-light">
+                            "Segundo a deputada federal Coronel Fernanda (PL-MT), autora do projeto, as mulheres poderão
+                            identificar quem já sofre uma acusação por este crime, além de
+                            <span
+                                class="group relative inline cursor-pointer border-b-2 border-red-500/60 dark:border-red-500/40 hover:border-red-600 dark:hover:border-red-400 pb-0.5 font-semibold text-red-600 dark:text-red-500 transition-colors">
+                                expor o condenado, que seria visto como covarde
+                                <!-- Tooltip -->
+                                <span
+                                    class="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-80 p-4 bg-zinc-950/95 dark:bg-[#0a0f18]/90 border border-red-500/30 dark:border-white/10 backdrop-blur-md rounded-xl text-xs text-stone-300 font-jakarta leading-relaxed shadow-2xl opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 z-50 normal-case not-italic text-left font-sans">
+                                    Simulação Performática de Exposição: Tenta-se substituir a punição severa de
+                                    privação de liberdade por um selo estético no corpo social, presumindo de forma
+                                    ingênua que a rotulação visual inibe a reincidência de infratores de alta gravidade.
+                                    <span
+                                        class="absolute top-full left-1/2 -translate-x-1/2 border-8 border-transparent border-t-zinc-950/95 dark:border-t-[#0a0f18]/90"></span>
+                                </span>
+                            </span>
+                            no ambiente do crime, segundo ela. 'Se a mulher souber que aquela tornozeleira rosa
+                            significa que aquele homem é agressor ou estuprador, ela não vai se aproximar dele.' O
+                            presidente sancionou uma lei que prevê a monitoração eletrônica de agressores como
+                            <span
+                                class="group relative inline cursor-pointer border-b-2 border-red-500/60 dark:border-red-500/40 hover:border-red-600 dark:hover:border-red-400 pb-0.5 font-semibold text-red-600 dark:text-red-500 transition-colors">
+                                medida protetiva autônoma
+                                <!-- Tooltip -->
+                                <span
+                                    class="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-80 p-4 bg-zinc-950/95 dark:bg-[#0a0f18]/90 border border-red-500/30 dark:border-white/10 backdrop-blur-md rounded-xl text-xs text-stone-300 font-jakarta leading-relaxed shadow-2xl opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 z-50 normal-case not-italic text-left font-sans">
+                                    Normalização do Desencarceramento: O uso autônomo do dispositivo eletrônico antes
+                                    mesmo da condenação sedimenta a cultura de medidas alternativas, esvaziando a prisão
+                                    e enfraquecendo a proteção de urgência real da mulher.
+                                    <span
+                                        class="absolute top-full left-1/2 -translate-x-1/2 border-8 border-transparent border-t-zinc-950/95 dark:border-t-[#0a0f18]/90"></span>
+                                </span>
+                            </span>
+                            fazendo com que o juiz possa obrigar o uso do equipamento, ainda na
+                            <span
+                                class="group relative inline cursor-pointer border-b-2 border-red-500/60 dark:border-red-500/40 hover:border-red-600 dark:hover:border-red-400 pb-0.5 font-semibold text-red-600 dark:text-red-500 transition-colors">
+                                fase inicial da acusação
+                                <!-- Tooltip -->
+                                <span
+                                    class="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-80 p-4 bg-zinc-950/95 dark:bg-[#0a0f18]/90 border border-red-500/30 dark:border-white/10 backdrop-blur-md rounded-xl text-xs text-stone-300 font-jakarta leading-relaxed shadow-2xl opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 z-50 normal-case not-italic text-left font-sans">
+                                    Precipitação Processual e Apelo Político: Foca-se em ações cosméticas imediatas de
+                                    alto impacto mediático, sob a chancela governamental, para dar uma falsa sensação de
+                                    atuação do Estado na segurança pública.
+                                    <span
+                                        class="absolute top-full left-1/2 -translate-x-1/2 border-8 border-transparent border-t-zinc-950/95 dark:border-t-[#0a0f18]/90"></span>
+                                </span>
+                                <!-- EXPOSIÇÃO DA AUTORIA -->
+                                <div
+                                    class="flex items-center space-x-3 p-4 bg-slate-200/50 dark:bg-[#0a0f18]/80 border-l-4 border-red-600 rounded-r-xl shadow-sm transition-colors duration-300">
+                                    <span class="text-xs font-mono text-zinc-600 dark:text-zinc-400">
+                                        📂 ALVO DA AUTÓPSIA: Divulgação institucional de projeto legislativo estético
+                                        pelo portal
+                                        <span
+                                            class="text-zinc-900 dark:text-white font-bold underline decoration-red-600 decoration-2 underline-offset-4 tracking-wide hover:text-red-600 dark:hover:text-red-400 transition-colors">O
+                                            Globo Brasil</span>
+                                        - 20/04/2026.
+                                    </span>
+                                </div>
+
+                                <!-- ARTIGO TÉCNICO DETALHADO -->
+                                <div class="space-y-6 pt-4">
+                                    <h3
+                                        class="font-playfair text-2xl md:text-3xl font-bold tracking-tight text-zinc-900 dark:text-white">
+                                        A Armadilha do Cavalo de Troia: O PL 1811/2026 e a Divisão da Base Conservadora
+                                    </h3>
+
+                                    <div
+                                        class="space-y-6 text-zinc-700 dark:text-stone-300/90 text-base md:text-lg leading-relaxed font-light font-jakarta">
+                                        <p>
+                                            O cenário político nacional, sob a ótica da contrainteligência, demonstra
+                                            que as investidas ideológicas da <strong>Esquerda Neototalitária</strong>
+                                            frequentemente se utilizam de pautas de gênero para induzir parlamentares da
+                                            base de oposição a servirem de vetores involuntários de infiltração. O
+                                            protocolo do PL 1811/2026 pela Deputada Federal Coronel Fernanda (PL-MT),
+                                            solicitando regime de urgência para a padronização de tornozeleiras
+                                            eletrônicas na cor rosa para acusados de violência doméstica, acendeu o
+                                            alerta em analistas de contrainteligência: a proposta, mesmo que nascida sob
+                                            legítimas e bem-intencionadas motivações protetivas da parlamentar,
+                                            comporta-se estruturalmente como um "Cavalo de Troia". Sob o manto de uma
+                                            causa moralmente blindada e inatacável — a proteção física da mulher —,
+                                            introduz-se no núcleo conservador uma ferramenta de <strong>Engenharia
+                                                Social Coercitiva</strong> desenhada pelo <strong>Progressismo
+                                                Autoritário</strong> para fragmentar o eleitorado de direita e
+                                            enfraquecer as garantias constitucionais sob o pretexto de performática
+                                            penal.
+                                        </p>
+
+                                        <p>
+                                            A manobra legislativa articula-se em torno de uma armadilha tática que
+                                            classificamos como o dilema de "Cruz e Espada". Lideranças centrais da
+                                            oposição conservadora (como o senador <a href="analise-uol-terrorismo.html" class="text-red-600 dark:text-red-500 hover:underline font-semibold" title="Análise: O Feitiço do Terrorismo no UOL">Flávio Bolsonaro</a>) são submetidas a uma
+                                            escolha impossível: se validarem a medida, endossam o punitivismo estético e
+                                            a humilhação pública do homem comum antes de qualquer julgamento, alienando
+                                            sua própria base; se propuserem um debate técnico sobre sua ineficácia, são
+                                            sumariamente linchados pela imprensa hegemônica sob o rótulo de "misóginos".
+                                            A pressa em pautar o tema nas vésperas de pleitos eleitorais expõe a
+                                            verdadeira intenção do estratagema: instrumentalizar conflitos de gênero
+                                            para cindir a coesão partidária conservadora, enquanto se consolida o
+                                            controle biopolítico disperso do <strong>Neototalitarismo</strong>.
+                                        </p>
+
+                                        <p>
+                                            Essa obsessão legislativa por "performáticas punitivas" cinde a espinha
+                                            dorsal do devido processo legal e abre margem para o relativismo da
+                                            presunção de inocência. O uso de coloração cromática vexatória em um
+                                            dispositivo de rastreamento não cumpre nenhuma função técnica de segurança
+                                            pública; atua estritamente como uma marca de execração pública. O
+                                            <strong>feminismo totalitário</strong>, encastelado na burocracia estatal e
+                                            amplificado pela mídia de massa, promove a rotulação simbólica do acusado
+                                            para habituar a opinião pública a sanções cautelares humilhantes e sumárias,
+                                            pavimentando o caminho para a erosão das liberdades individuais fundamentais
+                                            do cidadão comum.
+                                        </p>
+
+                                        <p>
+                                            A falsidade da pauta protetiva revela-se quando confrontada com a leniência
+                                            dispensada pelo sistema judicial a criminosas confessas do sexo feminino em
+                                            casos de extrema gravidade. Enquanto se propõe marcar esteticamente o homem
+                                            comum no início de investigações preliminares, assassinas e criminosas
+                                            confessionais de grande repercussão — como <a href="analise-g1-monique.html" class="text-red-600 dark:text-red-500 hover:underline font-semibold" title="Análise: O Duplo Padrão e a Soltura de Monique Medeiros">Monique Medeiros</a> e Suzane von
+                                            Richthofen — são repetidamente beneficiadas com progressões céleres de
+                                            regime, saídas temporárias e humanização editorial pela grande mídia. Em
+                                            contrapartida, o peso implacável do aparato estatal recai sobre pais de
+                                            família honestos que defendem a educação domiciliar (homeschooling) no
+                                            interior do país, ameaçados de perda de guarda por suposta negligência
+                                            estatal. Este duplo padrão escancara a assimetria moral de uma agenda
+                                            persecutória disfarçada de justiça.
+                                        </p>
+
+                                        <p>
+                                            Tecnicamente, a tornozeleira eletrônica é um receptor passivo de coordenadas
+                                            de GPS, incapaz de erguer barreiras físicas para conter um agressor
+                                            determinado a violar a restrição. A espetacularização da cor rosa atua,
+                                            portanto, como um anestésico social: vende-se um teatro punitivo à
+                                            sociedade, enquanto o acusado permanece solto no meio urbano e a vítima
+                                            desamparada. A verdadeira segurança pública exige o isolamento celular real
+                                            em presídios de segurança máxima para os agressores domésticos comprovados.
+                                            Aceitar o PL 1811/2026 sem questionar suas bases é ceder espaço à engenharia
+                                            ideológica que solapa a técnica jurídica e humilha o cidadão em benefício do
+                                            progressismo coercitivo.
+                                        </p>
+
+                                        <p>
+                                            Diante da pressão política em ano eleitoral, a oposição conservadora possui
+                                            uma saída tática capaz de neutralizar a armadilha de gênero e desmascarar a
+                                            agenda do sistema: propor o princípio da isonomia cromática total para a
+                                            criminalidade. Se o objetivo do Progressismo Autoritário é a
+                                            espetacularização visual do monitoramento para alertar a sociedade sobre o
+                                            risco, que se aplique uma escala proporcional para todas as categorias
+                                            penais. Por que não propor tornozeleiras diferenciadas para traficantes,
+                                            estupradores e pedófilos de alta periculosidade? A recusa sistemática em
+                                            rotular esteticamente criminosos hediondos, ao mesmo tempo em que insiste em
+                                            expor preventivamente o homem comum em disputas familiares não julgadas,
+                                            revela o "dois pesos e duas medidas" e prova que a intenção real é a
+                                            perseguição ideológica de gênero, e não a segurança pública.
+                                        </p>
+
+                                        <p>
+                                            Em última análise, o PL 1811/2026 é mais uma camada da engenharia
+                                            neototalitária que desmoraliza o homem comum e sabota a solidez técnica do
+                                            direito brasileiro. É preciso rejeitar o Cavalo de Troia e exigir punições
+                                            de verdade para os criminosos, sem ceder às armadilhas eleitorais do
+                                            progressismo.
+                                        </p>
+                                    </div>
+
+                                    <!-- BOX: AUTÓPSIA DA NARRATIVA -->
+                                    <div class="relative bg-red-950/20 border border-red-500/20 dark:bg-zinc-900/60 dark:border-red-500/20 rounded-2xl p-6 md:p-8 shadow-2xl overflow-hidden backdrop-blur-md mt-8"
+                                        x-data="{ copied: false, textToCopy: 'Pintar tornozeleiras de rosa é a performática punitiva do feminismo totalitário para humilhar o homem comum enquanto esconde que a justiça progressista solta criminosas hediondas todos os dias. Monique Medeiros e Suzane von Richthofen gozam de liberdade monitorada, mas pais de família que educam em casa enfrentam a força total do Estado. A verdadeira segurança não é um teatro cromático, é manter criminosos encarcerados de verdade.' }">
+
+                                        <div
+                                            class="flex items-center space-x-2 text-red-600 dark:text-red-500 border-b border-zinc-200/50 dark:border-white/5 pb-3 mb-4">
+                                            <span
+                                                class="px-2 py-0.5 bg-red-600 text-white font-mono text-[9px] font-bold rounded">DETECÇÃO</span>
+                                            <span
+                                                class="text-xs font-bold uppercase tracking-widest font-mono text-zinc-900 dark:text-white">Autópsia
+                                                da Narrativa</span>
+                                        </div>
+
+                                        <div class="flex flex-col space-y-4">
+                                            <div>
+                                                <h4
+                                                    class="text-xs font-mono font-bold text-red-500 uppercase tracking-wider">
+                                                    Modus Operandi Identificado:</h4>
+                                                <p
+                                                    class="text-zinc-700 dark:text-zinc-300 text-xs font-light leading-relaxed mt-1 font-sans">
+                                                    A pauta utiliza a retórica da 'proteção' para introduzir o
+                                                    punitivismo seletivo e a desmoralização estética do acusado. Ao
+                                                    forçar uma pauta de gênero em ano eleitoral, o projeto atua como um
+                                                    cavalo de troia que força a liderança do partido a escolher entre
+                                                    dois lados de uma armadilha montada pela militância.
+                                                </p>
+                                            </div>
+
+                                            <div
+                                                class="flex justify-between items-center border-t border-b border-zinc-200/50 dark:border-white/5 py-3">
+                                                <span
+                                                    class="text-xs font-mono font-bold text-zinc-500 dark:text-zinc-400 uppercase">Veredito
+                                                    da Autópsia:</span>
+                                                <span
+                                                    class="px-3 py-1 bg-red-950/80 text-red-500 border border-red-500/30 text-xs font-mono font-bold rounded uppercase tracking-wider">
+                                                    Agenda de Desmoralização Masculina
+                                                </span>
+                                            </div>
+
+                                            <div>
+                                                <h4
+                                                    class="text-xs font-mono font-bold text-gold-500 uppercase tracking-wider mb-2">
+                                                    Arma Intelectual (Copiar para WhatsApp):</h4>
+                                                <p class="text-zinc-700 dark:text-zinc-300 text-xs italic font-light leading-relaxed border-l-2 border-gold-500/40 pl-3 font-sans"
+                                                    x-text="textToCopy"></p>
+                                            </div>
+
+                                            <div class="pt-2">
+                                                <button
+                                                    @click="navigator.clipboard.writeText(textToCopy); copied = true; setTimeout(() => copied = false, 2000)"
+                                                    id="btn-copy-whatsapp-narrativa"
+                                                    class="w-full inline-flex items-center justify-center space-x-2 px-5 py-3 bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white font-bold text-[10px] uppercase tracking-widest rounded-full shadow-lg shadow-emerald-600/10 hover:shadow-emerald-500/20 transform hover:-translate-y-0.5 transition-all duration-300">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5"
+                                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+                                                    </svg>
+                                                    <span
+                                                        x-text="copied ? 'Copiado!' : 'Copiar Análise para o WhatsApp'"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <p
+                                        class="pt-6 border-t border-zinc-200 dark:border-zinc-800 text-xs font-mono text-zinc-500 mt-8">
+                                        Para fins de transparência documental e auditoria editorial, a matéria que
+                                        detalha as justificativas da deputada e o trâmite legislativo associado ao
+                                        monitoramento estético pode ser lida na íntegra no portal de notícias <a
+                                            href="https://oglobo.globo.com/brasil/noticia/2026/04/20/tornozeleira-rosa-projeto-de-lei-busca-padronizar-monitoramento-de-acusados-de-violencia-contra-a-mulher.ghtml"
+                                            target="_blank" rel="noopener noreferrer"
+                                            class="text-red-500 hover:underline inline-flex items-center">O Globo Brasil
+                                            &nbsp;🔗</a>.
+                                    </p>
+                                </div>
+                    </div>
+                </div>
+
+                <!-- COLUNA DA DIREITA (Sidebar Sticky - 4 colunas) -->
+                <aside class="lg:col-span-4 space-y-8">
+                    <div class="lg:sticky lg:top-28 space-y-8">
+
+                        <!-- BOX: AUTÓPSIA DA TÁTICA -->
+                        <div class="bg-white/95 dark:bg-zinc-900/60 border border-red-500/20 rounded-2xl p-6 shadow-2xl relative overflow-hidden backdrop-blur-md"
+                            x-data="{ copied: false, textToCopy: 'Pintar uma tornozeleira eletrônica de rosa não protege nenhuma mulher se a justiça progressista continuar soltando agressores no dia seguinte. O Neototalitarismo substitui o cumprimento rigoroso da pena pela espetacularização simbólica do monitoramento digital. A verdadeira segurança não depende de cores, mas de trancar criminosos na prisão e garantir que a lei seja aplicada sem clemência seletiva.' }">
+
+                            <div
+                                class="flex items-center space-x-2 text-red-600 dark:text-red-500 border-b border-zinc-200/50 dark:border-white/5 pb-3 mb-4">
+                                <span
+                                    class="px-2 py-0.5 bg-red-600 text-white font-mono text-[9px] font-bold rounded">AUTÓPSIA</span>
+                                <span class="text-xs font-bold uppercase tracking-widest font-mono">Autópsia da
+                                    Tática</span>
+                            </div>
+
+                            <div class="flex flex-col space-y-4">
+                                <div>
+                                    <h4 class="text-xs font-mono font-bold text-red-500 uppercase tracking-wider">
+                                        Diagnóstico:</h4>
+                                    <p class="text-zinc-700 dark:text-zinc-300 text-xs font-light leading-relaxed mt-1">
+                                        O uso da sinalização estética e da espetacularização punitiva pelo
+                                        <strong>Progressismo Autoritário</strong> para disfarçar o afrouxamento real do
+                                        encarceramento provisório.
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <h4 class="text-xs font-mono font-bold text-red-500 uppercase tracking-wider">
+                                        Objetivo Estratégico:</h4>
+                                    <p class="text-zinc-700 dark:text-zinc-300 text-xs font-light leading-relaxed mt-1">
+                                        Desviar o foco da falência operacional do rastreamento eletrônico e incentivar
+                                        medidas cautelares alternativas, erodindo a severidade penal sob a premissa de
+                                        humilhação moral.
+                                    </p>
+                                </div>
+
+                                <div class="border-t border-zinc-200 dark:border-white/5 pt-4">
+                                    <h4 class="text-xs font-mono font-bold text-gold-500 uppercase tracking-wider mb-2">
+                                        Manual de Defesa (Arma Intelectual):</h4>
+                                    <p class="text-zinc-700 dark:text-zinc-300 text-xs italic font-light leading-relaxed border-l-2 border-gold-500/40 pl-3"
+                                        x-text="textToCopy"></p>
+                                </div>
+
+                                <div class="pt-2">
+                                    <button
+                                        @click="navigator.clipboard.writeText(textToCopy); copied = true; setTimeout(() => copied = false, 2000)"
+                                        id="btn-copy-whatsapp"
+                                        class="w-full inline-flex items-center justify-center space-x-2 px-5 py-3 bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white font-bold text-[10px] uppercase tracking-widest rounded-full shadow-lg shadow-emerald-600/10 hover:shadow-emerald-500/20 transform hover:-translate-y-0.5 transition-all duration-300">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+                                        </svg>
+                                        <span x-text="copied ? 'Copiado!' : 'Copiar Resposta'"></span>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- BOX: DETECTOR DE CAVALOS DE TROIA -->
+                        <div
+                            class="bg-white/95 dark:bg-zinc-900/60 border border-amber-500/25 rounded-2xl p-6 shadow-2xl relative overflow-hidden backdrop-blur-md">
+
+                            <div
+                                class="flex items-center space-x-2 text-amber-500 border-b border-zinc-200/50 dark:border-white/5 pb-3 mb-4">
+                                <span
+                                    class="px-2 py-0.5 bg-amber-600 text-white font-mono text-[9px] font-bold rounded">DETECÇÃO</span>
+                                <span
+                                    class="text-xs font-bold uppercase tracking-widest font-mono text-zinc-900 dark:text-white">Dossiê
+                                    Cavalo de Troia</span>
+                            </div>
+
+                            <div class="flex flex-col space-y-4">
+                                <!-- Nível de Risco com barra visual -->
+                                <div>
+                                    <div class="flex justify-between items-center mb-1">
+                                        <h4 class="text-xs font-mono font-bold text-amber-500 uppercase tracking-wider">
+                                            Nível de Risco:</h4>
+                                        <span class="text-xs font-mono font-bold text-red-500">8.5 / 10</span>
+                                    </div>
+                                    <div class="w-full bg-zinc-200 dark:bg-zinc-800 h-1.5 rounded-full overflow-hidden">
+                                        <div class="bg-gradient-to-r from-amber-500 to-red-600 h-full rounded-full"
+                                            style="width: 85%"></div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <h4
+                                        class="text-xs font-mono font-bold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">
+                                        Análise do Cavalo de Troia:</h4>
+                                    <p
+                                        class="text-zinc-700 dark:text-zinc-300 text-xs font-light leading-relaxed mt-1 font-sans">
+                                        A proposta, mesmo se apresentada sob legítima intenção protetiva por parlamentar
+                                        aliada, comporta-se estruturalmente como uma armadilha tática de gênero. Ela
+                                        força lideranças conservadoras (como <a href="analise-uol-terrorismo.html" class="text-red-600 dark:text-red-500 hover:underline font-semibold" title="Análise: O Feitiço do Terrorismo no UOL">Flávio Bolsonaro</a>) a um dilema de "cruz e
+                                        espada" insolúvel: apoiar a humilhação do homem comum ou ser classificado de
+                                        misógino pela máquina progressista.
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <h4
+                                        class="text-xs font-mono font-bold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">
+                                        Espinha Dorsal da Ideologia:</h4>
+                                    <p
+                                        class="text-zinc-700 dark:text-zinc-300 text-xs font-light leading-relaxed mt-1 font-sans">
+                                        Punitivismo seletivo de gênero, desmoralização da presunção de inocência e
+                                        introdução da agenda de espetacularização humilhante no código penal.
+                                    </p>
+                                </div>
+
+                                <div class="border-t border-zinc-200 dark:border-white/5 pt-3">
+                                    <h4 class="text-xs font-mono font-bold text-red-500 uppercase tracking-wider">
+                                        Conclusão:</h4>
+                                    <p
+                                        class="text-zinc-700 dark:text-zinc-300 text-xs font-semibold leading-relaxed mt-1 font-sans">
+                                        🚨 Manobra Eleitoral e Ideológica. O projeto visa cindir o eleitorado e a base
+                                        do partido em ano de eleição, utilizando performáticas punitivas para sabotar o
+                                        debate técnico de segurança.
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Ficha Técnica -->
+                        <div
+                            class="bg-white dark:bg-zinc-900/20 border border-zinc-200 dark:border-white/5 rounded-2xl p-6 shadow-sm font-mono text-[10px] space-y-3">
+                            <span class="font-bold text-zinc-500 tracking-widest block uppercase mb-1">Ficha
+                                Técnica</span>
+                            <div class="flex justify-between border-b border-zinc-200/50 dark:border-white/5 pb-2">
+                                <span class="text-zinc-500">Monitor:</span>
+                                <span class="text-zinc-800 dark:text-zinc-300 font-semibold">QG_VoZ_DiReItA</span>
+                            </div>
+                            <div class="flex justify-between border-b border-zinc-200/50 dark:border-white/5 pb-2">
+                                <span class="text-zinc-500">Alvo:</span>
+                                <span class="text-red-500">O Globo (Legislativo)</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-zinc-500">Código Hash:</span>
+                                <span class="text-zinc-800 dark:text-zinc-300 font-semibold">#RX-5678-ROSA</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </aside>
+
+            </div>
+    </main>
+
+    <!-- SEÇÃO: BIOGRAFIA DO MENTOR -->
+    <section id="mentor"
+        class="py-24 bg-zinc-100 dark:bg-zinc-900/20 border-t border-zinc-200/10 relative overflow-hidden transition-colors duration-300">
+        <div class="absolute top-1/2 left-1/4 w-72 h-72 rounded-full bg-gold-600/5 glow-sphere"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+
+                <!-- Foto de Perfil Redonda -->
+                <div class="md:col-span-3 flex justify-center md:justify-end">
+                    <div class="relative group">
+                        <div
+                            class="absolute -inset-2 rounded-full border border-gold-500/10 scale-95 group-hover:scale-100 transition-all duration-700 pointer-events-none">
+                        </div>
+                        <div
+                            class="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border border-gold-500/30 p-1.5 bg-white dark:bg-zinc-900/50 shadow-xl">
+                            <img src="assets/jander_nunes_profile.webp" alt="Jander Nunes"
+                                class="w-full h-full object-cover rounded-full filter grayscale hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105"
+                                loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Biografia do Mentor -->
+                <div class="md:col-span-9 space-y-4 text-center md:text-left">
+                    <span
+                        class="text-xs uppercase tracking-[0.25em] font-bold text-gold-600 dark:text-gold-500 block">Linha
+                        de Frente</span>
+                    <h2 class="text-3xl font-bold tracking-tight font-playfair text-zinc-900 dark:text-white">O Mentor:
+                        Jander Nunes</h2>
+
+                    <p
+                        class="text-stone-700 dark:text-stone-300/90 text-sm md:text-base font-light leading-relaxed max-w-3xl font-jakarta">
+                        Jander Nunes é analista estratégico de comunicação, com mais de quinze anos de atuação nos
+                        bastidores da imprensa e no estudo da influência geopolítica sobre a opinião pública. Tendo
+                        testemunhado a infiltração progressista nas principais redações e a deformação da ética
+                        jornalística, assumiu a missão de fundar o portal Voz Direita. Seu propósito é traduzir a
+                        complexidade da guerra cultural em diretrizes táticas acessíveis, capacitando o cidadão de
+                        direita a identificar a engenharia social e a defender de forma fundamentada as bases morais e
+                        as liberdades civis que sustentam o nosso futuro comum.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (RODAPÉ) -->
+    <footer class="bg-black border-t border-zinc-900 text-zinc-400 py-16 transition-colors duration-300 relative z-30">
+        <div class="max-w-[1600px] w-full mx-auto px-6 lg:px-12">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+
+                <!-- Logo & Copyright -->
+                <div class="flex flex-col items-center md:items-start space-y-2">
+                    <div class="flex items-center space-x-0.5">
+                        <span class="font-light text-xl tracking-wide text-zinc-500 font-jakarta">Voz</span>
+                        <span
+                            class="font-extrabold text-xl tracking-tight text-white font-playfair italic">Direita</span>
+                    </div>
+                    <p
+                        class="text-[10px] font-mono text-zinc-600 dark:text-zinc-500 tracking-wide text-center md:text-left">
+                        Copyright &copy; 2026 Voz Direita. Todos os direitos reservados.
+                    </p>
+                </div>
+
+                <!-- Links de Redes Sociais -->
+                <div class="flex items-center space-x-6">
+                    <a href="#"
+                        class="text-zinc-500 hover:text-gold-400 transition-colors text-xs uppercase tracking-wider font-semibold">X
+                        (antigo Twitter)</a>
+                    <a href="#"
+                        class="text-zinc-500 hover:text-gold-400 transition-colors text-xs uppercase tracking-wider font-semibold">Telegram</a>
+                    <a href="#"
+                        class="text-zinc-500 hover:text-gold-400 transition-colors text-xs uppercase tracking-wider font-semibold">YouTube</a>
+                </div>
+
+                <!-- Links Institucionais -->
+                <div class="flex items-center space-x-6 text-xs font-mono text-zinc-500">
+                    <a href="#" class="hover:text-gold-500 transition-colors">Termos de Uso</a>
+                    <span class="text-zinc-800">•</span>
+                    <a href="#" class="hover:text-gold-500 transition-colors">Políticas de Privacidade</a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Botão Voltar ao Topo -->
+    <button @click="window.scrollTo({top: 0, behavior: 'smooth'})"
+            x-data="{ scrolled: false }"
+            @scroll.window="scrolled = (window.pageYOffset > 300)"
+            x-show="scrolled"
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 translate-y-10"
+            x-transition:enter-end="opacity-100 translate-y-0"
+            x-transition:leave="transition ease-in duration-300"
+            x-transition:leave-start="opacity-100 translate-y-0"
+            x-transition:leave-end="opacity-0 translate-y-10"
+            class="fixed bottom-8 right-8 z-[100] p-3 bg-zinc-900/90 dark:bg-white/90 text-white dark:text-zinc-900 rounded-full shadow-2xl backdrop-blur-md hover:scale-110 hover:bg-gold-600 dark:hover:bg-gold-500 transition-all border border-zinc-700 dark:border-white/20"
+            aria-label="Voltar ao topo" style="display: none;">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+</body>
+
+</html>

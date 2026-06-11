@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="pt-BR" :class="{ 'dark': darkMode }" x-data="{ darkMode: localStorage.getItem('darkMode') === 'true', searchOpen: false, mobileMenuOpen: false, searchQuery: '' }" x-init="$watch('darkMode', val => localStorage.setItem('darkMode', val))">
+
+<head>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <script>
+        (function() {
+            var savedTheme = localStorage.getItem('darkMode');
+            if (savedTheme === 'true') {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        })();
+    </script>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VN08M1DX3Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-VN08M1DX3Q');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <title>Voz Direita | Inteligência e Análise Estratégica</title>
+
+    <!-- Meta tags SEO -->
+    <meta name="description" content="">
+    <meta name="keywords"
+        content="Voz Direita, Guerra Cultural, Progressismo Autoritário, Engenharia Social, Hegemonia Cultural, Jander Nunes">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        playfair: ['"Playfair Display"', 'serif'],
+                        jakarta: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        gold: {
+                            50: '#fdfcf7',
+                            100: '#f9f6e6',
+                            200: '#f2eabf',
+                            300: '#e5d78d',
+                            400: '#d5be5a',
+                            500: '#c2a233',
+                            600: '#a38124',
+                            700: '#80611c',
+                            800: '#604617',
+                            900: '#463312',
+                            950: '#2b1e0a',
+                        },
+                        intel: {
+                            950: '#030712',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Custom Styles -->
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+
+        /* Suavização de scroll e comportamento premium */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Efeito de hover premium para o menu */
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -4px;
+            left: 50%;
+            background-color: currentColor;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Glow sutil para atmosfera de inteligência */
+        .glow-sphere {
+            filter: blur(120px);
+            opacity: 0.15;
+            pointer-events: none;
+        }
+
+        /* Barra de progresso do modal de construção */
+        @keyframes shrink {
+            from { transform: scaleX(1); }
+            to { transform: scaleX(0); }
+        }
+    </style>
+</head>
+
+<body
+    class="font-jakarta bg-slate-50 text-zinc-900 dark:bg-intel-950 dark:text-zinc-100 transition-colors duration-300 min-h-screen flex flex-col selection:bg-gold-500/30 selection:text-white overflow-x-hidden">
+
+
+
+    <!-- HEADER (CABEÇALHO) -->
+    <header
+        class="fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-zinc-200/20 dark:border-zinc-800/10 backdrop-blur-md bg-white/70 dark:bg-intel-950/75 shadow-sm dark:shadow-none">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+
+            <!-- Logo (Esquerda) -->
+            <div class="flex items-center">
+                <a href="#" id="logo-nav" class="flex items-center space-x-0.5 group">
+                    <span
+                        class="font-light text-2xl tracking-wide text-zinc-500 dark:text-zinc-400 transition-colors duration-300">Voz</span>
+                    <span
+                        class="font-extrabold text-2xl tracking-tight text-zinc-900 dark:text-white font-playfair italic group-hover:text-gold-500 transition-colors duration-300">Direita</span>
+                </a>
+            </div>
+
+            <!-- Menu de Navegação (Centro) -->
+            <nav class="hidden lg:flex items-center space-x-8 lg:space-x-6 xl:space-x-8">
+                <a href="#" id="menu-inicio"
+                    class="nav-link whitespace-nowrap text-sm font-medium tracking-wide text-zinc-800 hover:text-gold-600 dark:text-zinc-300 dark:hover:text-gold-400 transition-colors">Início</a>
+                <a href="#" id="menu-autopsia"
+                    class="nav-link whitespace-nowrap text-sm font-medium tracking-wide text-zinc-600 hover:text-gold-600 dark:text-zinc-400 dark:hover:text-gold-400 transition-colors">Autópsia
+                    da Mídia</a>
+                <a href="#" id="menu-cultura"
+                    class="nav-link whitespace-nowrap text-sm font-medium tracking-wide text-zinc-600 hover:text-gold-600 dark:text-zinc-400 dark:hover:text-gold-400 transition-colors">Cultura
+                    Pop</a>
+                <a href="#" id="menu-aparelhamento"
+                    class="nav-link whitespace-nowrap text-sm font-medium tracking-wide text-zinc-600 hover:text-gold-600 dark:text-zinc-400 dark:hover:text-gold-400 transition-colors">Aparelhamento</a>
+                <a href="fundador" id="menu-mentor"
+                    class="nav-link whitespace-nowrap text-sm font-medium tracking-wide text-zinc-600 hover:text-gold-600 dark:text-zinc-400 dark:hover:text-gold-400 transition-colors">O
+                    Mentor</a>
+            </nav>
+
+            <!-- Ações (Direita) -->
+            <div class="flex items-center space-x-4">
+
+                <!-- Campo de Pesquisa Interativo -->
+                <div class="relative flex items-center" x-data="{
+    localSearchOpen: false,
+    articles: [
+
+        {
+            title: 'Dark Horse: A Engenharia Social Contra o Cinema Conservador',
+            desc: 'A CartaCapital tenta desqualificar o filme sobre o atentado a Bolsonaro, mas expõe o cinismo de roteiristas que faturam milhões com o monopólio cultural.',
+            img: 'assets/dark_horse_autopsia.webp',
+            url: 'analise-cartacapital-darkhorse.html'
+        },
+
+        {
+            title: 'Pesquisa ES: A Manobra da Supressão de Horizonte',
+            desc: 'A disputa entre Lula e Flávio Bolsonaro no Espírito Santo e a manipulação do empate técnico.',
+            img: 'assets/lula_flavio_bolsonaro_grafico.webp',
+            url: 'analise-carta-capital-pesquisa.html'
+        },,
+        {
+            title: 'Ypê e o Terror Burocrático: O uso da Anvisa',
+            desc: 'A esquerda neototalitária usa a Anvisa para retaliar a Ypê pela doação de R$ 1,5 milhão a Bolsonaro.',
+            img: 'assets/sabotagem_ype.webp',
+            url: 'analise-g1-ype.html'
+        },
+{
+            title: 'Conflito Israel e Irã: Inversão de Culpabilidade',
+            desc: 'Como a mídia legitima o terrorismo sob disfarce de &quot;apelo à paz&quot;.',
+            img: 'assets/geopolitica_israel_ira.webp',
+            url: 'analise-geopolitica-israel-ira.html'
+        },
+        {
+            title: 'Pais são condenados por homeschooling em SP',
+            desc: 'A criminalização do ensino domiciliar através da Engenharia Social Coercitiva.',
+            img: 'assets/homeschooling_condenacao.webp',
+            url: 'analise-g1-homeschooling.html'
+        },
+        {
+            title: 'Messias rebate discurso de Flávio na Marcha',
+            desc: 'Como a mídia blinda o governo e tenta interditar a indignação cristã.',
+            img: 'assets/messias_marcha.webp',
+            url: 'analise-oglobo-messias.html'
+        },
+        {
+            title: 'A Sabotagem Editorial do Roda Viva 2018',
+            desc: 'Os bastidores das táticas inquisitoriais de debate.',
+            img: 'assets/rodaviva_lobos.webp',
+            url: 'analise-rodaviva-bolsonaro.html'
+        },
+        {
+            title: 'Feitiço do terrorismo e Flávio Bolsonaro',
+            desc: 'A esquerda neototalitária tenta criminalizar a oposição.',
+            img: 'assets/seguranca_rj.webp',
+            url: 'analise-uol-terrorismo.html'
+        },
+        {
+            title: 'Decisão libera Monique Medeiros da prisão',
+            desc: 'O progressismo autoritário e a anestesia da opinião pública.',
+            img: 'assets/monique_liberada.webp',
+            url: 'analise-g1-monique.html'
+        }
+    ],
+    get filteredArticles() {
+        if (searchQuery.trim() === '') return [];
+        const q = searchQuery.toLowerCase();
+        return this.articles.filter(a => (a.title + ' ' + a.desc).toLowerCase().includes(q));
+    }
+}">
+                    <button
+                        @click="localSearchOpen = !localSearchOpen; if(localSearchOpen) $nextTick(() => $refs.searchInput.focus())"
+                        id="btn-search-toggle"
+                        class="p-2 text-zinc-600 dark:text-zinc-300 hover:text-gold-500 transition-colors focus:outline-none"
+                        aria-label="Abrir busca">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </button>
+                    
+
+
+                    <input x-model="searchQuery" x-ref="searchInput" x-show="localSearchOpen" @click.away="if(searchQuery === '') localSearchOpen = false"
+                        x-transition:enter="transition ease-out duration-300"
+                        x-transition:enter-start="opacity-0 -translate-y-4 md:-translate-y-0 md:translate-x-4 md:scale-95"
+                        x-transition:enter-end="opacity-100 translate-y-0 md:translate-x-0 md:scale-100"
+                        x-transition:leave="transition ease-in duration-150"
+                        x-transition:leave-start="opacity-100 translate-y-0 md:translate-x-0 md:scale-100"
+                        x-transition:leave-end="opacity-0 -translate-y-2 md:-translate-y-0 md:translate-x-4 md:scale-95" type="text" id="input-search"
+                        placeholder="Buscar inteligência..."
+                        class="fixed top-[95px] left-4 right-4 md:absolute md:top-auto md:left-auto md:right-10 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-sm md:text-xs px-4 py-2.5 md:py-1.5 rounded-xl md:rounded-full w-[calc(100vw-2rem)] md:w-64 focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 shadow-2xl md:shadow-lg text-zinc-800 dark:text-zinc-200 z-[100] md:z-auto"
+                        x-cloak>
+                        
+                    <!-- Janela de Resultados da Pesquisa (Dropdown) -->
+                    <div x-show="searchQuery.length > 0 && localSearchOpen" 
+                         class="fixed top-[145px] left-4 right-4 md:absolute md:top-full md:left-auto md:right-10 md:w-[320px] md:mt-4 bg-white/95 dark:bg-zinc-900/95 backdrop-blur-xl border border-zinc-200 dark:border-zinc-800 rounded-2xl shadow-2xl overflow-hidden z-[200] max-h-[60vh] overflow-y-auto"
+                         x-transition:enter="transition ease-out duration-200"
+                         x-transition:enter-start="opacity-0 translate-y-2"
+                         x-transition:enter-end="opacity-100 translate-y-0"
+                         x-transition:leave="transition ease-in duration-150"
+                         x-transition:leave-start="opacity-100 translate-y-0"
+                         x-transition:leave-end="opacity-0 translate-y-2"
+                         x-cloak>
+                        <div class="p-3 border-b border-zinc-100 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-800/50 flex justify-between items-center sticky top-0 z-10">
+                            <span class="text-[10px] font-bold text-zinc-500 uppercase tracking-wider">Resultados Encontrados</span>
+                            <span class="text-[10px] font-bold text-gold-600 dark:text-gold-500" x-text="filteredArticles.length + ' Dossiês'"></span>
+                        </div>
+                        
+                        <template x-for="article in filteredArticles" :key="article.url">
+                            <a :href="article.url" class="flex items-center p-4 border-b border-zinc-100 dark:border-zinc-800/50 hover:bg-zinc-50 dark:hover:bg-zinc-800/80 transition-colors group">
+                                <div class="flex-shrink-0 pr-4">
+                                    <img :src="article.img" class="w-14 h-14 md:w-12 md:h-12 object-cover rounded-md shadow-sm group-hover:scale-105 transition-transform">
+                                </div>
+                                <div class="flex-grow">
+                                    <h4 class="text-sm font-bold text-zinc-900 dark:text-white leading-tight font-playfair group-hover:text-gold-600 dark:group-hover:text-gold-400 transition-colors" x-text="article.title"></h4>
+                                    <p class="text-[11px] text-zinc-500 dark:text-zinc-400 mt-1 line-clamp-2 leading-relaxed" x-text="article.desc"></p>
+                                </div>
+                            </a>
+                        </template>
+                        
+                        <div x-show="filteredArticles.length === 0" class="p-8 text-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto text-zinc-400 mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                            <p class="text-zinc-500 dark:text-zinc-400 text-xs font-medium">Nenhuma inteligência encontrada.</p>
+                            <p class="text-zinc-400 dark:text-zinc-500 text-[10px] mt-1">Tente outros termos de busca.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botão Alternador de Tema (Light/Dark) -->
+                <button @click="darkMode = !darkMode" id="btn-theme-toggle"
+                    class="p-2 text-zinc-600 dark:text-zinc-300 hover:text-gold-500 transition-colors focus:outline-none"
+                    aria-label="Alternar tema">
+                    <!-- Ícone Sol (Exibe no Dark Mode) -->
+                    <svg x-show="darkMode" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" x-cloak>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m2.828-9.9a5 5 0 117.07 7.07l-.707-.707M6.343 6.343l.707.707m9.9 9.9l.707-.707" />
+                    </svg>
+                    <!-- Ícone Lua (Exibe no Light Mode) -->
+                    <svg x-show="!darkMode" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" x-cloak>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+
+                <!-- Hamburguer Menu (Mobile) -->
+                <button @click="mobileMenuOpen = !mobileMenuOpen" id="btn-mobile-menu"
+                    class="p-2 lg:hidden text-zinc-600 dark:text-zinc-300 hover:text-gold-500 transition-colors focus:outline-none"
+                    aria-label="Menu principal">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+
+            </div>
+        </div>
+
+        <!-- Menu Mobile Drawer -->
+        <div x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 -translate-y-4" x-transition:enter-end="opacity-100 translate-y-0"
+            x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0"
+            x-transition:leave-end="opacity-0 -translate-y-4" id="mobile-drawer"
+            class="lg:hidden border-t border-zinc-200/20 bg-white/95 dark:bg-intel-950/95 backdrop-blur-lg px-6 py-6 space-y-4 shadow-xl"
+            x-cloak>
+            <a href="#"
+                class="block text-base font-medium text-zinc-800 dark:text-zinc-200 hover:text-gold-500">Início</a>
+            <a href="#"
+                class="block text-base font-medium text-zinc-600 dark:text-zinc-400 hover:text-gold-500">Autópsia da
+                Mídia</a>
+            <a href="#" class="block text-base font-medium text-zinc-600 dark:text-zinc-400 hover:text-gold-500">Cultura
+                Pop</a>
+            <a href="#"
+                class="block text-base font-medium text-zinc-600 dark:text-zinc-400 hover:text-gold-500">Aparelhamento</a>
+            <a href="fundador" class="block text-base font-medium text-zinc-600 dark:text-zinc-400 hover:text-gold-500">O
+                Mentor</a>
+        </div>
+    </header>
+
+    <!-- CONTEÚDOS TÁTICOS -->
+    <main id="conteudos" class="relative z-20 bg-slate-50 dark:bg-zinc-950 transition-all duration-300 pt-20 md:pt-28">
+
+        <!-- Fundo Temático Artístico (Olavo de Carvalho) via Tailwind bg-image -->
+        <div
+            class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-[url('olavo-background.jpg')] opacity-20 filter grayscale contrast-125 select-none pointer-events-none">
+        </div>
+
+        <!-- Camada de sobreposição extremamente escura e fosca -->
+        <div class="absolute inset-0 bg-gradient-to-b from-slate-100/90 via-slate-50/95 to-slate-50 dark:from-[#0a0f18]/90 dark:via-[#030712]/95 dark:to-[#030712] z-0"></div>
+
+        <!-- Conteúdo do Catálogo -->
+        <div class="relative z-10">
+
+            <!-- SEÇÃO RADAR DE NARRATIVAS (INTERCEPTAÇÕES DIÁRIAS) -->
+            <section id="radar-narrativas" class="py-10 md:py-20 max-w-7xl mx-auto px-6 relative border-b border-zinc-200 dark:border-zinc-500/10">
+                <div class="absolute top-12 left-12 w-80 h-80 rounded-full bg-red-500/5 glow-sphere"></div>
+
+                <!-- Mini Widget do Mentor (Top) -->
+                <div class="mb-12 flex justify-start">
+                    <div class="inline-flex items-center gap-4 bg-[#fdfbf7]/90 dark:bg-zinc-900/90 border border-zinc-200 dark:border-zinc-800 shadow-xl rounded-2xl py-3 px-4 pr-6 backdrop-blur-md transition-all hover:shadow-2xl hover:border-gold-500/30">
+                        <!-- Imagem com LED -->
+                        <div class="relative shrink-0">
+                            <img src="assets/jander_nunes_profile.webp" alt="Jander Nunes" class="w-12 h-12 rounded-full object-cover border border-zinc-200 dark:border-white/10 shadow-sm">
+                            <span class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-[#fdfbf7] dark:border-zinc-900 rounded-full animate-pulse"></span>
+                        </div>
+                        <!-- Textos e Link -->
+                        <div class="flex flex-col">
+                            <span class="text-zinc-900 dark:text-white font-bold text-sm tracking-wide font-playfair">Jander Nunes</span>
+                            <div class="flex items-center gap-2 mt-1">
+                                <span class="text-zinc-500 dark:text-zinc-400 text-[10px] uppercase tracking-widest font-mono">O Mentor</span>
+                                <span class="w-1 h-1 rounded-full bg-zinc-300 dark:bg-zinc-700"></span>
+                                <a href="#mentor" class="text-gold-600 dark:text-gold-400 hover:text-gold-500 hover:underline text-[10px] font-bold uppercase tracking-wider transition-colors">Conhecer a missão &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cabeçalho da Seção -->
+                <div class="mb-16 flex flex-col md:flex-row md:items-end justify-between border-b border-zinc-200 dark:border-white/10 pb-6">
+                    <div>
+                        <span class="text-xs uppercase tracking-[0.25em] font-bold text-red-500 block mb-2">Monitoramento Ativo</span>
+                        <h2 class="text-3xl md:text-5xl font-bold tracking-tight font-playfair text-zinc-900 dark:text-white">
+                            Radar de Narrativas
+                        </h2>
+                    </div>
+                    <p class="text-base font-light text-zinc-600 dark:text-zinc-400 mt-4 md:mt-0 max-w-md">
+                        Interceptações diárias e autópsia das manchetes da grande mídia.
+                    </p>
+                </div>
+
+                <!-- Grid de Cards responsivo -->
+                <div id="radar-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    
+                    <!-- Card 1 -->
+<div class="md:col-span-2 lg:col-span-2 bg-white/60 dark:bg-white/5 border border-zinc-200 dark:border-white/10 backdrop-blur-md rounded-2xl overflow-hidden hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold-500/5 hover:border-gold-500/30 transition-all duration-300 flex flex-col justify-between min-h-[440px] group" x-transition >
+                        <div class="relative w-full h-64 md:h-[22rem] overflow-hidden bg-zinc-900 border-b border-zinc-200 dark:border-white/5">
+                            <img src="assets/capa_fifa_trump.png" alt="Miniatura FIFA Trump" class="w-full h-full object-cover object-top transition-all duration-500 group-hover:scale-105 brightness-[1.1] contrast-[1.02] md:brightness-100 md:contrast-100" loading="lazy" decoding="async">
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <div class="inline-flex items-center space-x-1.5 px-2 py-0.5 bg-zinc-1550/60 dark:bg-white/5 border border-zinc-200 dark:border-white/10 rounded-md text-[9px] font-mono font-medium text-zinc-600 dark:text-zinc-300 uppercase tracking-wider">
+                                        <span class="h-1.5 w-1.5 rounded-full bg-red-500 animate-pulse"></span>
+                                        <span>INTERCEPTADO | G1 / L'ÉQUIPE</span>
+                                    </div>
+                                    <span class="text-[9px] text-zinc-500 font-mono">10 de Junho, 2026</span>
+                                </div>
+                                <h3 class="font-playfair text-base sm:text-lg font-bold text-zinc-900 dark:text-white group-hover:text-gold-600 dark:group-hover:text-gold-400 transition-colors leading-snug">
+                                    "Gianni Infantino é chamado de fantoche de Trump no jornal L'Équipe"
+                                </h3>
+                                <p class="text-xs text-zinc-600 dark:text-zinc-400 font-light leading-relaxed">
+                                    A Arma do Esporte: Como o globalismo instrumentaliza o futebol para demonizar a soberania e o controle de fronteiras.
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-zinc-200 dark:border-white/5">
+                                <a href="analise-g1-fifa-trump.html" class="inline-flex items-center text-xs font-semibold tracking-wider text-zinc-700 hover:text-gold-600 dark:text-zinc-300 dark:hover:text-gold-400 transition-colors uppercase">
+                                    Iniciar Autópsia &nbsp;➔
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+<!-- Card 2 -->
+<div class="bg-white/60 dark:bg-white/5 border border-zinc-200 dark:border-white/10 backdrop-blur-md rounded-2xl overflow-hidden hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold-500/5 hover:border-gold-500/30 transition-all duration-300 flex flex-col justify-between min-h-[440px] group" x-transition >
+                        <div class="relative w-full h-48 overflow-hidden bg-zinc-900 border-b border-zinc-200 dark:border-white/5">
+                            <img src="assets/capa_quaest_eleicoes.png" alt="Miniatura Quaest" class="w-full h-full object-cover object-top transition-all duration-500 group-hover:scale-105 brightness-[1.1] contrast-[1.02] md:brightness-100 md:contrast-100" loading="lazy" decoding="async">
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <div class="inline-flex items-center space-x-1.5 px-2 py-0.5 bg-zinc-1550/60 dark:bg-white/5 border border-zinc-200 dark:border-white/10 rounded-md text-[9px] font-mono font-medium text-zinc-600 dark:text-zinc-300 uppercase tracking-wider">
+                                        <span class="h-1.5 w-1.5 rounded-full bg-red-500 animate-pulse"></span>
+                                        <span>INTERCEPTADO | G1</span>
+                                    </div>
+                                    <span class="text-[9px] text-zinc-500 font-mono">10 de Junho, 2026</span>
+                                </div>
+                                <h3 class="font-playfair text-base sm:text-lg font-bold text-zinc-900 dark:text-white group-hover:text-gold-600 dark:group-hover:text-gold-400 transition-colors leading-snug">
+                                    "Quaest: Entre eleitores independentes, Lula passa Flávio Bolsonaro..."
+                                </h3>
+                                <p class="text-xs text-zinc-600 dark:text-zinc-400 font-light leading-relaxed">
+                                    A Fabricação de Consenso e como a mídia fatia pesquisas para criar manchetes vitoriosas e forjar um "efeito manada" artificial.
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-zinc-200 dark:border-white/5">
+                                <a href="analise-g1-quaest.html" class="inline-flex items-center text-xs font-semibold tracking-wider text-zinc-700 hover:text-gold-600 dark:text-zinc-300 dark:hover:text-gold-400 transition-colors uppercase">
+                                    Iniciar Autópsia &nbsp;➔
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+<!-- Card 3 -->
+<div class="bg-white/60 dark:bg-white/5 border border-zinc-200 dark:border-white/10 backdrop-blur-md rounded-2xl overflow-hidden hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold-500/5 hover:border-gold-500/30 transition-all duration-300 flex flex-col justify-between min-h-[440px] group" x-transition >
+                        <div class="relative w-full h-48 overflow-hidden bg-zinc-900 border-b border-zinc-200 dark:border-white/5">
+                            <img src="assets/capa_eleicao_peru.png" alt="Miniatura Eleição Peru" class="w-full h-full object-cover object-top transition-all duration-500 group-hover:scale-105 brightness-[1.1] contrast-[1.02] md:brightness-100 md:contrast-100" loading="lazy" decoding="async">
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <div class="inline-flex items-center space-x-1.5 px-2 py-0.5 bg-zinc-1550/60 dark:bg-white/5 border border-zinc-200 dark:border-white/10 rounded-md text-[9px] font-mono font-medium text-zinc-600 dark:text-zinc-300 uppercase tracking-wider">
+                                        <span class="h-1.5 w-1.5 rounded-full bg-red-500 animate-pulse"></span>
+                                        <span>INTERCEPTADO | CARTA CAPITAL</span>
+                                    </div>
+                                    <span class="text-[9px] text-zinc-500 font-mono">10 de Junho, 2026</span>
+                                </div>
+                                <h3 class="font-playfair text-base sm:text-lg font-bold text-zinc-900 dark:text-white group-hover:text-gold-600 dark:group-hover:text-gold-400 transition-colors leading-snug">
+                                    "Como está a disputa entre Fujimori e Sánchez..."
+                                </h3>
+                                <p class="text-xs text-zinc-600 dark:text-zinc-400 font-light leading-relaxed">
+                                    A Fuga do Laboratório Socialista e a Engenharia dos Números para esconder a rejeição no exílio.
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-zinc-200 dark:border-white/5">
+                                <a href="analise-cartacapital-peru.html" class="inline-flex items-center text-xs font-semibold tracking-wider text-zinc-700 hover:text-gold-600 dark:text-zinc-300 dark:hover:text-gold-400 transition-colors uppercase">
+                                    Iniciar Autópsia &nbsp;➔
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+<!-- Card 4 -->
+<div class="bg-white/60 dark:bg-white/5 border border-zinc-200 dark:border-white/10 backdrop-blur-md rounded-2xl overflow-hidden hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold-500/5 hover:border-gold-500/30 transition-all duration-300 flex flex-col justify-between min-h-[440px] group" x-transition >
+                        <div class="relative w-full h-48 overflow-hidden bg-zinc-900 border-b border-zinc-200 dark:border-white/5">
+                            <img src="assets/dark_horse_autopsia.webp" alt="Miniatura" class="w-full h-full object-cover object-top transition-all duration-500 group-hover:scale-105 brightness-[1.1] contrast-[1.02] md:brightness-100 md:contrast-100" loading="lazy" decoding="async">
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <div class="inline-flex items-center space-x-1.5 px-2 py-0.5 bg-zinc-1550/60 dark:bg-white/5 border border-zinc-200 dark:border-white/10 rounded-md text-[9px] font-mono font-medium text-zinc-600 dark:text-zinc-300 uppercase tracking-wider">
+                                        <span class="h-1.5 w-1.5 rounded-full bg-red-500 animate-pulse"></span>
+                                        <span>INTERCEPTADO | CARTA CAPITAL</span>
+                                    </div>
+                                    <span class="text-[9px] text-zinc-500 font-mono">10 de Junho, 2026</span>
+                                </div>
+                                <h3 class="font-playfair text-base sm:text-lg font-bold text-zinc-900 dark:text-white group-hover:text-gold-600 dark:group-hover:text-gold-400 transition-colors leading-snug">
+                                    "Dark Horse: A Engenharia Social Contra o Cinema Conservador"
+                                </h3>
+                                <p class="text-xs text-zinc-600 dark:text-zinc-400 font-light leading-relaxed">
+                                    A CartaCapital tenta desqualificar o filme sobre o atentado a Bolsonaro, mas expõe o cinismo de roteiristas que faturam milhões com o monopólio cultural.
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-zinc-200 dark:border-white/5">
+                                <a href="analise-cartacapital-darkhorse.html" class="inline-flex items-center text-xs font-semibold tracking-wider text-zinc-700 hover:text-gold-600 dark:text-zinc-300 dark:hover:text-gold-400 transition-colors uppercase">
+                                    Iniciar Autópsia &nbsp;➔
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+<!-- Card 5 -->
+<div class=" bg-white/60 dark:bg-white/5 border border-zinc-200 dark:border-white/10 backdrop-blur-md rounded-2xl overflow-hidden hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold-500/5 hover:border-gold-500/30 transition-all duration-300 flex flex-col justify-between min-h-[440px] group" x-transition >
+                        <div class="relative w-full h-48 overflow-hidden bg-zinc-900 border-b border-zinc-200 dark:border-white/5">
+                            <img src="assets/lula_flavio_bolsonaro_grafico.webp" alt="Miniatura Pesquisa Espírito Santo" class="w-full h-full object-cover object-top transition-all duration-500 group-hover:scale-105 brightness-[1.1] contrast-[1.02] md:brightness-100 md:contrast-100" loading="lazy" decoding="async">
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <div class="inline-flex items-center space-x-1.5 px-2 py-0.5 bg-zinc-1550/60 dark:bg-white/5 border border-zinc-200 dark:border-white/10 rounded-md text-[9px] font-mono font-medium text-zinc-600 dark:text-zinc-300 uppercase tracking-wider">
+                                        <span class="h-1.5 w-1.5 rounded-full bg-red-500 animate-pulse"></span>
+                                        <span>INTERCEPTADO | CARTA CAPITAL</span>
+                                    </div>
+                                    <span class="text-[9px] text-zinc-500 font-mono">09 de Junho, 2026</span>
+                                </div>
+                                <h3 class="font-playfair text-base sm:text-lg font-bold text-zinc-900 dark:text-white group-hover:text-gold-600 dark:group-hover:text-gold-400 transition-colors leading-snug">
+                                    "A disputa entre Lula e Flávio Bolsonaro no Espírito Santo..."
+                                </h3>
+                                <p class="text-xs text-zinc-600 dark:text-zinc-400 font-light leading-relaxed">
+                                    Como a mídia utiliza a manobra de "supressão de horizonte" para esconder a derrota do governo no 2º turno.
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-zinc-200 dark:border-white/5">
+                                <a href="analise-carta-capital-pesquisa.html" class="inline-flex items-center text-xs font-semibold tracking-wider text-zinc-700 hover:text-gold-600 dark:text-zinc-300 dark:hover:text-gold-400 transition-colors uppercase">
+                                    Iniciar Autópsia &nbsp;➔
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+<!-- Card 6 -->
+<div class="bg-white/60 dark:bg-white/5 border border-zinc-200 dark:border-white/10 backdrop-blur-md rounded-2xl overflow-hidden hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold-500/5 hover:border-gold-500/30 transition-all duration-300 flex flex-col justify-between min-h-[440px] group" x-transition >
+                        <div class="relative w-full h-48 overflow-hidden bg-zinc-900 border-b border-zinc-200 dark:border-white/5">
+                            <img src="assets/sabotagem_ype.webp" alt="Miniatura Ypê" class="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 brightness-[1.1] contrast-[1.02] md:brightness-100 md:contrast-100" loading="lazy" decoding="async">
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <div class="inline-flex items-center space-x-1.5 px-2 py-0.5 bg-zinc-1550/60 dark:bg-white/5 border border-zinc-200 dark:border-white/10 rounded-md text-[9px] font-mono font-medium text-zinc-600 dark:text-zinc-300 uppercase tracking-wider">
+                                        <span class="h-1.5 w-1.5 rounded-full bg-red-500 animate-pulse"></span>
+                                        <span>INTERCEPTADO | G1</span>
+                                    </div>
+                                    <span class="text-[9px] text-zinc-500 font-mono">12 de Maio, 2026</span>
+                                </div>
+                                <h3 class="font-playfair text-base sm:text-lg font-bold text-zinc-900 dark:text-white group-hover:text-gold-600 dark:group-hover:text-gold-400 transition-colors leading-snug">
+                                    "Ypê: final 1 no lote identifica produtos..."
+                                </h3>
+                                <p class="text-xs text-zinc-600 dark:text-zinc-400 font-light leading-relaxed">
+                                    A esquerda neototalitária usa a Anvisa para retaliar a Ypê pela doação de R$ 1,5 milhão a Bolsonaro.
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-zinc-200 dark:border-white/5">
+                                <a href="analise-g1-ype.html" class="inline-flex items-center text-xs font-semibold tracking-wider text-zinc-700 hover:text-gold-600 dark:text-zinc-300 dark:hover:text-gold-400 transition-colors uppercase">
+                                    Iniciar Autópsia &nbsp;➔
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+<!-- Card 7 -->
+<div class="bg-white/60 dark:bg-white/5 border border-zinc-200 dark:border-white/10 backdrop-blur-md rounded-2xl overflow-hidden hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold-500/5 hover:border-gold-500/30 transition-all duration-300 flex flex-col justify-between min-h-[440px] group" x-transition >
+                        <div class="relative w-full h-48 overflow-hidden bg-zinc-900 border-b border-zinc-200 dark:border-white/5">
+                            <img src="assets/geopolitica_israel_ira.webp" alt="Miniatura Conflito Israel Irã" class="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 brightness-[1.1] contrast-[1.02] md:brightness-100 md:contrast-100" loading="lazy" decoding="async">
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <div class="inline-flex items-center space-x-1.5 px-2 py-0.5 bg-zinc-1550/60 dark:bg-white/5 border border-zinc-200 dark:border-white/10 rounded-md text-[9px] font-mono font-medium text-zinc-600 dark:text-zinc-300 uppercase tracking-wider">
+                                        <span class="h-1.5 w-1.5 rounded-full bg-red-500 animate-pulse"></span>
+                                        <span>INTERCEPTADO | G1 MUNDO</span>
+                                    </div>
+                                    <span class="text-[9px] text-zinc-500 font-mono">07 de Junho, 2026</span>
+                                </div>
+                                <h3 class="font-playfair text-base sm:text-lg font-bold text-zinc-900 dark:text-white group-hover:text-gold-600 dark:group-hover:text-gold-400 transition-colors leading-snug">
+                                    "Após bombardeios de Israel a Beirute..."
+                                </h3>
+                                <p class="text-xs text-zinc-600 dark:text-zinc-400 font-light leading-relaxed">
+                                    Como a mídia inverte a agressão primária e omite o financiamento do terrorismo para proteger o eixo anti-Ocidente.
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-zinc-200 dark:border-white/5">
+                                <a href="analise-geopolitica-israel-ira.html" class="inline-flex items-center text-xs font-semibold tracking-wider text-zinc-700 hover:text-gold-600 dark:text-zinc-300 dark:hover:text-gold-400 transition-colors uppercase">
+                                    Iniciar Autópsia &nbsp;➔
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                                    </div>
+            </section>
+
+
+            <!-- SEÇÃO MAIS ARTIGOS (MINIATURAS) -->
+            <section id="mais-artigos" class="py-8 max-w-7xl mx-auto px-6 relative border-b border-zinc-200 dark:border-zinc-500/10">
+                <!-- Cabeçalho da Seção -->
+                <div class="mb-8 border-b border-zinc-200 dark:border-white/10 pb-4">
+                    <h3 class="text-xl md:text-2xl font-bold tracking-tight font-playfair text-zinc-900 dark:text-white">
+                        Mais Artigos
+                    </h3>
+                </div>
+
+                <!-- Grid de Miniaturas -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    
+                    <!-- Item 1 -->
+<a href="analise-g1-monique.html" class="flex items-center p-4 bg-white/60 dark:bg-white/5 border border-zinc-200 dark:border-white/10 backdrop-blur-md rounded-xl hover:-translate-y-1 hover:shadow-lg hover:border-gold-500/30 transition-all duration-300 group" >
+                        <div class="flex-shrink-0 pr-4">
+                            <img src="assets/monique_liberada.webp" alt="Miniatura" class="w-16 h-16 md:w-20 md:h-20 object-cover rounded-lg group-hover:scale-105 transition-all duration-300" loading="lazy">
+                        </div>
+                        <div class="flex-grow">
+                            <h4 class="font-playfair text-sm md:text-base font-bold text-zinc-900 dark:text-white group-hover:text-gold-600 dark:group-hover:text-gold-400 transition-colors leading-snug">
+                                Decisão libera Monique Medeiros da prisão
+                            </h4>
+                            <p class="text-[11px] md:text-xs text-zinc-600 dark:text-zinc-400 font-light mt-2 line-clamp-2">
+                                O progressismo autoritário e a anestesia da opinião pública frente à seletividade penal.
+                            </p>
+                        </div>
+                    </a>
+
+
+<!-- Item 2 -->
+<a href="analise-rodaviva-bolsonaro.html" class="flex items-center p-4 bg-white/60 dark:bg-white/5 border border-zinc-200 dark:border-white/10 backdrop-blur-md rounded-xl hover:-translate-y-1 hover:shadow-lg hover:border-gold-500/30 transition-all duration-300 group" >
+                        <div class="flex-shrink-0 pr-4">
+                            <img src="assets/rodaviva_lobos.webp" alt="Miniatura" class="w-16 h-16 md:w-20 md:h-20 object-cover rounded-lg group-hover:scale-105 transition-all duration-300" loading="lazy">
+                        </div>
+                        <div class="flex-grow">
+                            <h4 class="font-playfair text-sm md:text-base font-bold text-zinc-900 dark:text-white group-hover:text-gold-600 dark:group-hover:text-gold-400 transition-colors leading-snug">
+                                A Sabotagem Editorial do Roda Viva 2018
+                            </h4>
+                            <p class="text-[11px] md:text-xs text-zinc-600 dark:text-zinc-400 font-light mt-2 line-clamp-2">
+                                Os bastidores das táticas inquisitoriais de debate e a falência do modelo isento.
+                            </p>
+                        </div>
+                    </a>
+
+
+<!-- Item 3 -->
+<a href="analise-uol-terrorismo.html" class="flex items-center p-4 bg-white/60 dark:bg-white/5 border border-zinc-200 dark:border-white/10 backdrop-blur-md rounded-xl hover:-translate-y-1 hover:shadow-lg hover:border-gold-500/30 transition-all duration-300 group" >
+                        <div class="flex-shrink-0 pr-4">
+                            <img src="assets/seguranca_rj.webp" alt="Miniatura" class="w-16 h-16 md:w-20 md:h-20 object-cover rounded-lg group-hover:scale-105 transition-all duration-300" loading="lazy">
+                        </div>
+                        <div class="flex-grow">
+                            <h4 class="font-playfair text-sm md:text-base font-bold text-zinc-900 dark:text-white group-hover:text-gold-600 dark:group-hover:text-gold-400 transition-colors leading-snug">
+                                O Feitiço do Terrorismo e Flávio Bolsonaro
+                            </h4>
+                            <p class="text-[11px] md:text-xs text-zinc-600 dark:text-zinc-400 font-light mt-2 line-clamp-2">
+                                A esquerda neototalitária tenta criminalizar a oposição através de manobras jurídicas.
+                            </p>
+                        </div>
+                    </a>
+
+
+<!-- Item 4 -->
+<a href="analise-oglobo-messias.html" class="flex items-center p-4 bg-white/60 dark:bg-white/5 border border-zinc-200 dark:border-white/10 backdrop-blur-md rounded-xl hover:-translate-y-1 hover:shadow-lg hover:border-gold-500/30 transition-all duration-300 group" >
+                        <div class="flex-shrink-0 pr-4">
+                            <img src="assets/messias_marcha.webp" alt="Miniatura" class="w-16 h-16 md:w-20 md:h-20 object-cover rounded-lg group-hover:scale-105 transition-all duration-300" loading="lazy">
+                        </div>
+                        <div class="flex-grow">
+                            <h4 class="font-playfair text-sm md:text-base font-bold text-zinc-900 dark:text-white group-hover:text-gold-600 dark:group-hover:text-gold-400 transition-colors leading-snug">
+                                Jorge Messias e a Blindagem na Marcha para Jesus
+                            </h4>
+                            <p class="text-[11px] md:text-xs text-zinc-600 dark:text-zinc-400 font-light mt-2 line-clamp-2">
+                                Como a mídia blinda o governo e tenta interditar a indignação cristã legítima.
+                            </p>
+                        </div>
+                    </a>
+
+
+<!-- Item 5 -->
+<a href="analise-uol-marcha.html" class="flex items-center p-4 bg-white/60 dark:bg-white/5 border border-zinc-200 dark:border-white/10 backdrop-blur-md rounded-xl hover:-translate-y-1 hover:shadow-lg hover:border-gold-500/30 transition-all duration-300 group" >
+                        <div class="flex-shrink-0 pr-4">
+                            <img src="assets/studio_uol_news.webp" alt="Miniatura" class="w-16 h-16 md:w-20 md:h-20 object-cover rounded-lg group-hover:scale-105 transition-all duration-300" loading="lazy">
+                        </div>
+                        <div class="flex-grow">
+                            <h4 class="font-playfair text-sm md:text-base font-bold text-zinc-900 dark:text-white group-hover:text-gold-600 dark:group-hover:text-gold-400 transition-colors leading-snug">
+                                A Redução do Engajamento na Marcha para Jesus
+                            </h4>
+                            <p class="text-[11px] md:text-xs text-zinc-600 dark:text-zinc-400 font-light mt-2 line-clamp-2">
+                                A engenharia social para enfraquecer o conservadorismo no Brasil.
+                            </p>
+                        </div>
+                    </a>
+
+
+<!-- Item 6 -->
+<a href="analise-uol-lula.html" class="flex items-center p-4 bg-white/60 dark:bg-white/5 border border-zinc-200 dark:border-white/10 backdrop-blur-md rounded-xl hover:-translate-y-1 hover:shadow-lg hover:border-gold-500/30 transition-all duration-300 group" >
+                        <div class="flex-shrink-0 pr-4">
+                            <img src="assets/newsroom_banner.webp" alt="Miniatura" class="w-16 h-16 md:w-20 md:h-20 object-cover rounded-lg group-hover:scale-105 transition-all duration-300" loading="lazy">
+                        </div>
+                        <div class="flex-grow">
+                            <h4 class="font-playfair text-sm md:text-base font-bold text-zinc-900 dark:text-white group-hover:text-gold-600 dark:group-hover:text-gold-400 transition-colors leading-snug">
+                                O Simbolismo da Posse de Lula
+                            </h4>
+                            <p class="text-[11px] md:text-xs text-zinc-600 dark:text-zinc-400 font-light mt-2 line-clamp-2">
+                                Uma autópsia das imagens fabricadas para legitimar um retorno ao poder sem respaldo nas ruas.
+                            </p>
+                        </div>
+                    </a>
+
+
+
+
+
+
+
+
+                </div>
+            </section>
+            
+<!-- SEÇÃO 1: AUTÓPSIA DA MÍDIA -->
+            <section id="autopsia-midia" class="py-24 max-w-7xl mx-auto px-6 relative">
+                <div class="absolute top-12 right-12 w-80 h-80 rounded-full bg-amber-500/5 glow-sphere"></div>
+
+                <!-- Título da Seção Editorial -->
+                <div class="mb-16 flex flex-col md:flex-row md:items-end justify-between border-b border-zinc-200 dark:border-white/10 pb-6">
+                    <div>
+                        <span class="text-xs uppercase tracking-[0.25em] font-bold text-gold-600 dark:text-gold-500 block mb-2">01 /
+                            Desconstrução de Narrativas</span>
+                        <h2 class="text-3xl md:text-5xl font-bold tracking-tight font-playfair text-zinc-900 dark:text-white">
+                            Autópsia da Mídia
+                        </h2>
+                    </div>
+                    <p class="text-base font-light text-zinc-600 dark:text-zinc-400 mt-4 md:mt-0 max-w-md">
+                        Expondo a engenharia de linguagem e o consenso fabricado pelas principais redações do país.
+                    </p>
+                </div>
+
+                <!-- Grid de Artigos (Glassmorphism) -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                    <!-- Artigo 1 -->
+                    <div
+                        class="bg-white/60 dark:bg-white/5 border border-zinc-200 dark:border-white/10 backdrop-blur-md rounded-2xl overflow-hidden hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold-500/10 hover:border-gold-500/40 transition-all duration-300 flex flex-col group">
+                        <div class="relative h-48 w-full overflow-hidden">
+                            <img src="assets/media_autopsy.webp" alt="A Fabricação da Verdade Única"
+                                class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <span class="text-[10px] font-bold tracking-widest text-gold-600 dark:text-gold-400 mb-2 uppercase">Análise de
+                                Discurso</span>
+                            <h3
+                                class="font-playfair text-xl font-bold text-zinc-900 dark:text-white group-hover:text-gold-600 dark:group-hover:text-gold-400 transition-colors mb-3">
+                                A Fabricação da Verdade Única
+                            </h3>
+                            <p class="text-zinc-600 dark:text-zinc-300 text-sm font-light leading-relaxed mb-6">
+                                Como manchetes coordenadas criam uma ilusão de consenso público durante crises
+                                institucionais.
+                            </p>
+                            <a href="dossie"
+                                class="mt-auto inline-flex items-center text-xs font-semibold tracking-wider text-zinc-700 hover:text-gold-600 dark:text-zinc-300 dark:hover:text-gold-400 transition-colors uppercase">
+                                Ler Dossiê
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform"
+                                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Artigo 2 -->
+                    <div
+                        class="bg-white/60 dark:bg-white/5 border border-zinc-200 dark:border-white/10 backdrop-blur-md rounded-2xl overflow-hidden hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold-500/10 hover:border-gold-500/40 transition-all duration-300 flex flex-col group">
+                        <div class="relative h-48 w-full overflow-hidden">
+                            <img src="assets/chess_strategy_bg.webp" alt="O Monopólio da Checagem"
+                                class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105 filter hue-rotate-15" loading="lazy" decoding="async">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <span class="text-[10px] font-bold tracking-widest text-gold-600 dark:text-gold-400 mb-2 uppercase">Agências de
+                                Checagem</span>
+                            <h3
+                                class="font-playfair text-xl font-bold text-zinc-900 dark:text-white group-hover:text-gold-600 dark:group-hover:text-gold-400 transition-colors mb-3">
+                                O Monopólio da Checagem
+                            </h3>
+                            <p class="text-zinc-600 dark:text-zinc-300 text-sm font-light leading-relaxed mb-6">
+                                Uma autópsia detalhada sobre a arquitetura de poder e censura disfarçada sob o selo de
+                                "verificação".
+                            </p>
+                            <a href="dossie-agencias"
+                                class="mt-auto inline-flex items-center text-xs font-semibold tracking-wider text-zinc-700 hover:text-gold-600 dark:text-zinc-300 dark:hover:text-gold-400 transition-colors uppercase">
+                                Ler Dossiê
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform"
+                                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Artigo 3 -->
+                    <div
+                        class="bg-white/60 dark:bg-white/5 border border-zinc-200 dark:border-white/10 backdrop-blur-md rounded-2xl overflow-hidden hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold-500/10 hover:border-gold-500/40 transition-all duration-300 flex flex-col group">
+                        <div class="relative h-48 w-full overflow-hidden">
+                            <img src="assets/aparelhamento_dossier_pt.webp" alt="Linguagem e Engenharia Social"
+                                class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <span class="text-[10px] font-bold tracking-widest text-gold-600 dark:text-gold-400 mb-2 uppercase">Linguística
+                                Aplicada</span>
+                            <h3
+                                class="font-playfair text-xl font-bold text-zinc-900 dark:text-white group-hover:text-gold-600 dark:group-hover:text-gold-400 transition-colors mb-3">
+                                Linguagem & Engenharia Social
+                            </h3>
+                            <p class="text-zinc-600 dark:text-zinc-300 text-sm font-light leading-relaxed mb-6">
+                                Como a mudança sutil no vocabulário oficial da grande mídia redesenha a moral e as leis
+                                vigentes.
+                            </p>
+                            <a href="dossie-linguagem"
+                                class="mt-auto inline-flex items-center text-xs font-semibold tracking-wider text-zinc-700 hover:text-gold-600 dark:text-zinc-300 dark:hover:text-gold-400 transition-colors uppercase">
+                                Ler Dossiê
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform"
+                                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- SEÇÃO 2: GUERRA CULTURAL POP (FILMES E SÉRIES) -->
+            <section id="guerra-cultural" class="py-24 max-w-7xl mx-auto px-6 relative border-t border-zinc-200 dark:border-white/10">
+                <div class="absolute top-1/2 left-12 w-96 h-96 rounded-full bg-blue-950/10 glow-sphere"></div>
+
+                <!-- Título da Seção Editorial -->
+                <div class="mb-16 flex flex-col md:flex-row md:items-end justify-between border-b border-zinc-200 dark:border-white/10 pb-6">
+                    <div>
+                        <span class="text-xs uppercase tracking-[0.25em] font-bold text-gold-600 dark:text-gold-500 block mb-2">02 / A
+                            Indústria do Entretenimento</span>
+                        <h2 class="text-3xl md:text-5xl font-bold tracking-tight font-playfair text-zinc-900 dark:text-white">
+                            Guerra Cultural Pop
+                        </h2>
+                    </div>
+                    <p class="text-base font-light text-zinc-600 dark:text-zinc-400 mt-4 md:mt-0 max-w-md">
+                        Decodificando a mensagem ideológica implícita em produções de Hollywood e nas maiores
+                        plataformas de streaming.
+                    </p>
+                </div>
+
+                <!-- Grid de Cards Menores e Mais Clean -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                    <!-- Card 1 -->
+                    <a href="dossie-doutrinacao"
+                        class="group flex flex-col bg-white/80 dark:bg-zinc-900/40 border border-zinc-200 dark:border-white/10 rounded-2xl overflow-hidden hover:shadow-xl hover:border-gold-500/30 transition-all duration-300 backdrop-blur-md">
+                        <!-- Miniatura (16:9) -->
+                        <div class="relative aspect-video overflow-hidden bg-zinc-100 dark:bg-zinc-950">
+                            <img src="assets/guerra_pop_1.webp" alt="Doutrinação Invisível"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async">
+                        </div>
+                        <!-- Informações Clean -->
+                        <div class="p-6 flex flex-col flex-grow">
+                            <span class="text-[10px] font-bold tracking-widest text-gold-600 dark:text-gold-500 uppercase mb-2">DOCUMENTÁRIO • 2026</span>
+                            <h3 class="font-playfair text-xl font-bold text-zinc-900 dark:text-white mb-2 leading-tight group-hover:text-gold-600 dark:group-hover:text-gold-400 transition-colors">
+                                Doutrinação Invisível
+                            </h3>
+                            <p class="text-zinc-600 dark:text-zinc-400 text-sm font-light leading-relaxed flex-grow">
+                                Como produções de massas moldam o inconsciente coletivo ao redefinir a moral familiar e as virtudes tradicionais de forma velada.
+                            </p>
+                            <div class="mt-5 flex items-center space-x-2 text-[10px] font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest group-hover:text-gold-600 dark:group-hover:text-gold-500 transition-colors">
+                                <span>Acessar Análise</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Card 2 -->
+                    <a href="dossie-valores"
+                        class="group flex flex-col bg-white/80 dark:bg-zinc-900/40 border border-zinc-200 dark:border-white/10 rounded-2xl overflow-hidden hover:shadow-xl hover:border-gold-500/30 transition-all duration-300 backdrop-blur-md">
+                        <div class="relative aspect-video overflow-hidden bg-zinc-100 dark:bg-zinc-950">
+                            <img src="assets/guerra_pop_2.webp" alt="Subversão de Valores"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <span class="text-[10px] font-bold tracking-widest text-gold-600 dark:text-gold-500 uppercase mb-2">SÉRIE ESPECIAL • 2026</span>
+                            <h3 class="font-playfair text-xl font-bold text-zinc-900 dark:text-white mb-2 leading-tight group-hover:text-gold-600 dark:group-hover:text-gold-400 transition-colors">
+                                Subversão de Valores
+                            </h3>
+                            <p class="text-zinc-600 dark:text-zinc-400 text-sm font-light leading-relaxed flex-grow">
+                                A desconstrução sistemática de figuras heroicas clássicas e a normalização de protagonistas amorais nas narrativas modernas.
+                            </p>
+                            <div class="mt-5 flex items-center space-x-2 text-[10px] font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest group-hover:text-gold-600 dark:group-hover:text-gold-500 transition-colors">
+                                <span>Acessar Análise</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Card 3 -->
+                    <a href="dossie-silicio"
+                        class="group flex flex-col bg-white/80 dark:bg-zinc-900/40 border border-zinc-200 dark:border-white/10 rounded-2xl overflow-hidden hover:shadow-xl hover:border-gold-500/30 transition-all duration-300 backdrop-blur-md">
+                        <div class="relative aspect-video overflow-hidden bg-zinc-100 dark:bg-zinc-950">
+                            <img src="assets/chess_strategy_bg.webp" alt="Telas de Silício"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <span class="text-[10px] font-bold tracking-widest text-gold-600 dark:text-gold-500 uppercase mb-2">INVESTIGAÇÃO • 2026</span>
+                            <h3 class="font-playfair text-xl font-bold text-zinc-900 dark:text-white mb-2 leading-tight group-hover:text-gold-600 dark:group-hover:text-gold-400 transition-colors">
+                                Telas de Silício
+                            </h3>
+                            <p class="text-zinc-600 dark:text-zinc-400 text-sm font-light leading-relaxed flex-grow">
+                                O papel dos algoritmos de recomendação na indução de comportamentos e filtragem de visões de mundo conservadoras.
+                            </p>
+                            <div class="mt-5 flex items-center space-x-2 text-[10px] font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest group-hover:text-gold-600 dark:group-hover:text-gold-500 transition-colors">
+                                <span>Acessar Análise</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </section>
+
+            <!-- SEÇÃO 3: A HEGEMONIA DO JORNALISMO -->
+            <section id="hegemonia-jornalismo" class="py-24 max-w-7xl mx-auto px-6 relative border-t border-zinc-200 dark:border-white/10"
+                x-data="{ selectedPilar: 1 }">
+                <div class="absolute bottom-12 right-12 w-96 h-96 rounded-full bg-gold-600/5 glow-sphere"></div>
+
+                <!-- Título da Seção Editorial -->
+                <div class="mb-16 flex flex-col md:flex-row md:items-end justify-between border-b border-zinc-200 dark:border-white/10 pb-6">
+                    <div>
+                        <span class="text-xs uppercase tracking-[0.25em] font-bold text-gold-600 dark:text-gold-500 block mb-2">03 / O
+                            Aparelhamento das Redações</span>
+                        <h2 class="text-3xl md:text-5xl font-bold tracking-tight font-playfair text-zinc-900 dark:text-white">
+                            A Hegemonia do Jornalismo
+                        </h2>
+                    </div>
+                    <p class="text-base font-light text-zinc-600 dark:text-zinc-400 mt-4 md:mt-0 max-w-md">
+                        Entenda como a imprensa tradicional foi ocupada e transformada em braço ideológico de interesses
+                        específicos.
+                    </p>
+                </div>
+
+                <!-- Layout Editorial Asimétrico - Dossiê Interativo (Glassmorphism) -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+
+                    <!-- Esquerda: O Dossiê Dinâmico (Layout de Documento) -->
+                    <div class="lg:col-span-6 flex flex-col">
+                        <div
+                            class="flex-grow bg-white/60 dark:bg-zinc-950/60 border border-zinc-200 dark:border-white/10 backdrop-blur-md rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden transition-all duration-300 hover:border-gold-500/30">
+
+                            <!-- Visual de Fundo Texturizado do Dossiê -->
+                            <div class="absolute top-0 right-0 w-32 h-32 opacity-[0.05] pointer-events-none text-zinc-900 dark:text-white">
+                                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="50" cy="50" r="40" stroke="currentColor" stroke-width="2" />
+                                    <path d="M50 10V90M10 50h80" stroke="currentColor" stroke-width="1" />
+                                </svg>
+                            </div>
+
+                            <!-- Cabeçalho do Dossiê Documental -->
+                            <div class="flex items-center justify-between mb-8 border-b border-zinc-200 dark:border-white/10 pb-4">
+                                <div class="flex items-center space-x-3">
+                                    <span class="h-2 w-2 rounded-full bg-red-600 animate-pulse"></span>
+                                    <span
+                                        class="text-[10px] font-bold tracking-widest text-zinc-500 dark:text-zinc-400 uppercase font-mono">Dossiê:
+                                        #0492-VD</span>
+                                </div>
+                                <span
+                                    class="px-3 py-1 bg-red-100 dark:bg-red-950/40 border border-red-300 dark:border-red-500/25 rounded-md text-[9px] font-bold text-red-600 dark:text-red-500 uppercase tracking-widest font-mono">
+                                    Confidencial
+                                </span>
+                            </div>
+
+                            <!-- CONTEÚDO DINÂMICO DOSSIÊ (Com base no Pilar Selecionado) -->
+                            <div class="space-y-6 min-h-[260px] flex flex-col justify-between">
+
+                                <!-- Bloco 1: Ocupação do Espaço -->
+                                <div x-show="selectedPilar === 1" x-transition:enter="transition ease-out duration-300"
+                                    x-transition:enter-start="opacity-0 translate-y-2"
+                                    x-transition:enter-end="opacity-100 translate-y-0" class="space-y-4">
+                                    <span
+                                        class="text-xs font-semibold text-gold-600 dark:text-gold-500 uppercase font-mono tracking-wider">Capítulo
+                                        I / Filtração Ideológica</span>
+                                    <h4 class="font-playfair text-2xl font-bold text-zinc-900 dark:text-white leading-tight">
+                                        O Monopólio Intelectual nas Faculdades
+                                    </h4>
+                                    <p class="text-zinc-600 dark:text-zinc-300 text-sm font-light leading-relaxed">
+                                        A hegemonia jornalística começa décadas antes do primeiro emprego. Faculdades de
+                                        jornalismo foram transformadas em centros exclusivos de doutrinação ideológica,
+                                        onde qualquer divergência do dogma progressista resulta em exclusão social e
+                                        acadêmica. O diploma tornou-se um certificado de conformidade intelectual.
+                                    </p>
+                                </div>
+
+                                <!-- Bloco 2: Patrulha Editorial -->
+                                <div x-show="selectedPilar === 2" x-transition:enter="transition ease-out duration-300"
+                                    x-transition:enter-start="opacity-0 translate-y-2"
+                                    x-transition:enter-end="opacity-100 translate-y-0" class="space-y-4" x-cloak>
+                                    <span
+                                        class="text-xs font-semibold text-gold-600 dark:text-gold-500 uppercase font-mono tracking-wider">Capítulo
+                                        II / Patrulhamento Interno</span>
+                                    <h4 class="font-playfair text-2xl font-bold text-zinc-900 dark:text-white leading-tight">
+                                        A Patrulha Ideológica e o Cancelamento
+                                    </h4>
+                                    <p class="text-zinc-600 dark:text-zinc-300 text-sm font-light leading-relaxed">
+                                        Uma vez inseridos nas redações, jornalistas enfrentam uma forte coerção
+                                        corporativa. Conselhos editoriais e comitês internos de redação punem ou demitem
+                                        profissionais que expressam fatos desalinhados com a narrativa progressista
+                                        estabelecida. A autocensura tornou-se o principal método de sobrevivência na
+                                        carreira.
+                                    </p>
+                                </div>
+
+                                <!-- Bloco 3: Financiamento Direcionado -->
+                                <div x-show="selectedPilar === 3" x-transition:enter="transition ease-out duration-300"
+                                    x-transition:enter-start="opacity-0 translate-y-2"
+                                    x-transition:enter-end="opacity-100 translate-y-0" class="space-y-4" x-cloak>
+                                    <span
+                                        class="text-xs font-semibold text-gold-600 dark:text-gold-500 uppercase font-mono tracking-wider">Capítulo
+                                        III / Subsídios Globais</span>
+                                    <h4 class="font-playfair text-2xl font-bold text-zinc-900 dark:text-white leading-tight">
+                                        Redes Globais de Financiamento Ativista
+                                    </h4>
+                                    <p class="text-zinc-600 dark:text-zinc-300 text-sm font-light leading-relaxed">
+                                        Fundações internacionais, ONGs e fundos governamentais injetam milhões de
+                                        dólares anualmente em projetos de "jornalismo independente", coletivos de
+                                        checagem e núcleos ativistas. Essa injeção de capital amarra as redações a
+                                        agendas supranacionais de controle social e combate às liberdades civis.
+                                    </p>
+                                </div>
+
+                                <!-- Rodapé do Dossiê -->
+                                <div
+                                    class="border-t border-zinc-200 dark:border-white/10 pt-6 mt-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-xs font-mono text-zinc-500">
+                                    <div>
+                                        <span>STATUS: <strong class="text-red-500">ANÁLISE DE CAMPO
+                                                COMPLETA</strong></span>
+                                    </div>
+                                    <div class="flex items-center space-x-2">
+                                        <span>Assinatura:</span>
+                                        <span class="font-playfair italic text-zinc-800 dark:text-zinc-200">J. Nunes</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Direita: Os Pilares do Controle (Navegador com Glassmorphism) -->
+                    <div class="lg:col-span-6 flex flex-col justify-center space-y-6">
+
+                        <h3 class="text-xs uppercase tracking-[0.2em] font-bold text-zinc-500 dark:text-zinc-400">
+                            Clique nos Pilares de Controle:
+                        </h3>
+
+                        <!-- Pilar 1 -->
+                        <button @click="selectedPilar = 1"
+                            :class="selectedPilar === 1 ? 'border-gold-500/40 bg-zinc-200/50 dark:bg-white/10 shadow-xl' : 'border-transparent hover:bg-zinc-200/20 dark:hover:bg-white/5'"
+                            class="w-full text-left p-6 rounded-2xl border transition-all duration-300 group flex items-start space-x-4">
+                            <div :class="selectedPilar === 1 ? 'bg-gold-500 text-zinc-950' : 'bg-zinc-200 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400'"
+                                class="h-10 w-10 rounded-full flex items-center justify-center font-bold font-mono text-sm shrink-0 transition-colors">
+                                01
+                            </div>
+                            <div class="space-y-1">
+                                <h4 :class="selectedPilar === 1 ? 'text-gold-600 dark:text-gold-400 font-bold' : 'text-zinc-700 dark:text-zinc-300 font-medium'"
+                                    class="text-lg font-playfair transition-colors">
+                                    Filtração Acadêmica
+                                </h4>
+                                <p class="text-zinc-600 dark:text-zinc-400 text-sm font-light leading-relaxed">
+                                    A triagem ideológica inicial realizada nas universidades e centros de formação de
+                                    comunicadores.
+                                </p>
+                            </div>
+                        </button>
+
+                        <!-- Pilar 2 -->
+                        <button @click="selectedPilar = 2"
+                            :class="selectedPilar === 2 ? 'border-gold-500/40 bg-zinc-200/50 dark:bg-white/10 shadow-xl' : 'border-transparent hover:bg-zinc-200/20 dark:hover:bg-white/5'"
+                            class="w-full text-left p-6 rounded-2xl border transition-all duration-300 group flex items-start space-x-4">
+                            <div :class="selectedPilar === 2 ? 'bg-gold-500 text-zinc-950' : 'bg-zinc-200 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400'"
+                                class="h-10 w-10 rounded-full flex items-center justify-center font-bold font-mono text-sm shrink-0 transition-colors">
+                                02
+                            </div>
+                            <div class="space-y-1">
+                                <h4 :class="selectedPilar === 2 ? 'text-gold-600 dark:text-gold-400 font-bold' : 'text-zinc-700 dark:text-zinc-300 font-medium'"
+                                    class="text-lg font-playfair transition-colors">
+                                    Coerção Editorial
+                                </h4>
+                                <p class="text-zinc-600 dark:text-zinc-400 text-sm font-light leading-relaxed">
+                                    A censura e perseguição corporativa contra jornalistas independentes de viés
+                                    conservador.
+                                </p>
+                            </div>
+                        </button>
+
+                        <!-- Pilar 3 -->
+                        <button @click="selectedPilar = 3"
+                            :class="selectedPilar === 3 ? 'border-gold-500/40 bg-zinc-200/50 dark:bg-white/10 shadow-xl' : 'border-transparent hover:bg-zinc-200/20 dark:hover:bg-white/5'"
+                            class="w-full text-left p-6 rounded-2xl border transition-all duration-300 group flex items-start space-x-4">
+                            <div :class="selectedPilar === 3 ? 'bg-gold-500 text-zinc-950' : 'bg-zinc-200 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400'"
+                                class="h-10 w-10 rounded-full flex items-center justify-center font-bold font-mono text-sm shrink-0 transition-colors">
+                                03
+                            </div>
+                            <div class="space-y-1">
+                                <h4 :class="selectedPilar === 3 ? 'text-gold-600 dark:text-gold-400 font-bold' : 'text-zinc-700 dark:text-zinc-300 font-medium'"
+                                    class="text-lg font-playfair transition-colors">
+                                    Financiamento Supranacional
+                                </h4>
+                                <p class="text-zinc-600 dark:text-zinc-400 text-sm font-light leading-relaxed">
+                                    O fluxo de capital global financiando ONGs jornalísticas para impor agendas de
+                                    controle social.
+                                </p>
+                            </div>
+                        </button>
+
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- HERO SECTION -->
+    <section id="mentor"
+        class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-slate-50 dark:bg-zinc-950 transition-colors duration-300">
+
+        <!-- Imagem de Fundo de Tabuleiro de Xadrez com Texture Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="assets/chess_strategy_bg.webp" alt="Tabuleiro de Xadrez - Cenário de Estratégia Tática"
+                class="w-full h-full object-cover object-center opacity-20 dark:opacity-40 select-none pointer-events-none filter grayscale contrast-125" fetchpriority="high">
+            <!-- Overlay escuro denso para não brigar com o texto -->
+            <div class="absolute inset-0 bg-gradient-to-b from-slate-50/80 via-slate-50/90 to-slate-50 dark:from-zinc-950/90 dark:via-zinc-950/95 dark:to-zinc-950"></div>
+            <!-- Ambient glows coloridos sutis -->
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-gold-600/10 glow-sphere"></div>
+            <div class="absolute bottom-1/3 right-1/4 w-[500px] h-[500px] rounded-full bg-blue-900/10 glow-sphere">
+            </div>
+        </div>
+
+        <div
+            class="relative z-10 max-w-7xl mx-auto px-6 py-12 md:py-24 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+            <!-- Conteúdo de Texto (Esquerda) -->
+            <div class="lg:col-span-7 flex flex-col text-left space-y-6 md:space-y-8">
+
+                <!-- Badge de Autoridade -->
+                <div class="inline-flex items-center space-x-2">
+                    <span class="h-[1px] w-8 bg-gold-500/50"></span>
+                    <span id="hero-badge" class="text-xs uppercase tracking-[0.25em] font-semibold text-gold-600 dark:text-gold-500">
+                        Inteligência & Defesa Cultural
+                    </span>
+                </div>
+
+                <!-- Título Editorial Premium -->
+                <h1 id="hero-title"
+                    class="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-zinc-900 dark:text-white font-playfair leading-[1.08] lg:max-w-2xl">
+                    A clareza tática na <span class="italic text-gold-600 dark:text-gold-400 font-normal">guerra de narrativas</span>
+                </h1>
+
+                <!-- Texto Principal / Missão -->
+                <p id="hero-desc"
+                    class="text-base sm:text-lg text-zinc-600 dark:text-zinc-300 font-light leading-relaxed max-w-xl font-jakarta">
+                    O portal <span class="font-semibold text-zinc-900 dark:font-normal dark:text-white">Voz Direita</span> é uma trincheira de inteligência.
+                    Desconstruindo a hegemonia cultural e a engenharia social da <span class="text-zinc-900 dark:text-white font-semibold dark:font-normal">Esquerda Neototalitária</span>, fornecemos as
+                    ferramentas intelectuais para garantir um futuro soberano, seguro e verdadeiramente livre.
+                </p>
+
+                <!-- CTAs de Ação Premium -->
+                <div
+                    class="flex flex-col sm:flex-row items-stretch sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 pt-4">
+                    <a href="#conteudos" id="btn-cta-primary"
+                        class="px-8 py-4 bg-gradient-to-r from-gold-600 to-gold-500 hover:from-gold-500 hover:to-gold-400 text-zinc-950 font-semibold text-sm tracking-wider uppercase rounded-full shadow-lg shadow-gold-600/15 hover:shadow-gold-500/20 transform hover:-translate-y-0.5 transition-all duration-300 text-center">
+                        Acessar Portal de Análise
+                    </a>
+                    <a href="fundador" id="btn-cta-secondary"
+                        class="px-8 py-4 border border-zinc-300 dark:border-zinc-700 hover:border-gold-500/50 text-zinc-800 dark:text-white font-medium text-sm tracking-wider uppercase rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300 text-center">
+                        Conhecer o Mentor
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Perfil do Mentor e Elementos Visuais (Direita) -->
+            <div class="lg:col-span-5 flex flex-col items-center justify-center">
+                <div class="relative group">
+
+                    <!-- Efeito de anel orbital de luxo -->
+                    <div
+                        class="absolute -inset-4 rounded-full border border-gold-500/10 scale-95 group-hover:scale-100 group-hover:border-gold-500/20 transition-all duration-1000 ease-out pointer-events-none">
+                    </div>
+                    <div
+                        class="absolute -inset-8 rounded-full border border-gold-500/5 scale-90 group-hover:scale-100 group-hover:border-gold-500/10 transition-all duration-1000 ease-out delay-100 pointer-events-none">
+                    </div>
+
+                    <!-- Foto de Perfil -->
+                    <div
+                        class="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-full overflow-hidden border-2 border-gold-500/20 p-2 bg-white/60 dark:bg-zinc-900/60 shadow-2xl backdrop-blur-sm">
+                        <img src="assets/jander_nunes_profile.webp" alt="Jander Nunes - Analista Estratégico da Esquerda"
+                            id="img-mentor-hero"
+                            class="w-full h-full object-cover rounded-full filter grayscale hover:grayscale-0 transition-all duration-700 ease-out scale-100 group-hover:scale-105" fetchpriority="high">
+                    </div>
+
+                    <!-- Assinatura/Mini Bio Flutuante -->
+                    <div
+                        class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-white/90 dark:bg-zinc-900/90 border border-zinc-200 dark:border-zinc-800 backdrop-blur-md px-6 py-2.5 rounded-full shadow-xl text-center min-w-[240px] pointer-events-none">
+                        <h2 id="mentor-title-hero" class="text-sm font-semibold text-zinc-900 dark:text-white tracking-wide">Jander Nunes
+                        </h2>
+                        <p id="mentor-subtitle-hero" class="text-[10px] uppercase tracking-wider text-gold-600 dark:text-gold-500 mt-0.5">
+                            Analista Estratégico da Esquerda</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Divisor inferior sutil para transição editorial -->
+        <div
+            class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-slate-50 dark:from-intel-950 to-transparent pointer-events-none">
+        </div>
+
+    </section>
+
+    
+    <!-- FOOTER (RODAPÉ) -->
+    <footer class="bg-black border-t border-zinc-900 text-zinc-400 py-16 transition-colors duration-300 relative z-30">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+
+                <!-- Logo & Copyright -->
+                <div class="flex flex-col items-center md:items-start space-y-2">
+                    <div class="flex items-center space-x-0.5">
+                        <span class="font-light text-xl tracking-wide text-zinc-500 font-jakarta">Voz</span>
+                        <span
+                            class="font-extrabold text-xl tracking-tight text-white font-playfair italic">Direita</span>
+                    </div>
+                    <p
+                        class="text-[10px] font-mono text-zinc-600 dark:text-zinc-500 tracking-wide text-center md:text-left">
+                        Copyright &copy; 2026 Voz Direita. Todos os direitos reservados.
+                    </p>
+                </div>
+
+                <!-- Links de Redes Sociais (Ícones) -->
+                <div class="flex items-center space-x-6">
+                    <!-- X (Twitter) -->
+                    <a href="#" class="text-zinc-500 hover:text-zinc-300 dark:hover:text-white transition-colors" aria-label="X (antigo Twitter)">
+                        <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                    <!-- Telegram -->
+                    <a href="#" class="text-zinc-500 hover:text-[#229ED9] transition-colors" aria-label="Telegram">
+                        <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.62-.2-1.12-.31-1.1-.66.01-.18.27-.36.78-.55 3.05-1.33 5.09-2.21 6.12-2.64 2.91-1.21 3.51-1.42 3.91-1.43.09 0 .28.02.4.11.1.08.13.19.14.28-.01.06.01.24-.03.38z"/>
+                        </svg>
+                    </a>
+                    <!-- YouTube -->
+                    <a href="#" class="text-zinc-500 hover:text-[#FF0000] transition-colors" aria-label="YouTube">
+                        <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Links Institucionais -->
+                <div class="flex items-center space-x-6 text-xs font-mono text-zinc-500">
+                    <a href="#" class="hover:text-gold-500 transition-colors">Termos de Uso</a>
+                    <span class="text-zinc-800">•</span>
+                    <a href="politica-privacidade" class="text-white/60 hover:text-white transition-colors font-semibold">Política de Privacidade e Cookies</a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- AVISO DE COOKIES (BOTTOM BAR) -->
+    <div x-data="{ showCookies: !sessionStorage.getItem('cookiesAccepted') }" 
+         x-show="showCookies" 
+         x-transition:enter="transition ease-out duration-300"
+         x-transition:enter-start="opacity-0 translate-y-12"
+         x-transition:enter-end="opacity-100 translate-y-0"
+         x-transition:leave="transition ease-in duration-200"
+         x-transition:leave-start="opacity-100 translate-y-0"
+         x-transition:leave-end="opacity-0 translate-y-12"
+         class="fixed bottom-4 left-4 right-4 md:right-auto md:w-[26rem] z-50 bg-[#fdfbf7] dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl p-4 flex flex-col md:flex-row items-center justify-between gap-4 shadow-2xl text-zinc-800 dark:text-zinc-200"
+         x-cloak>
+        
+        <p class="text-xs font-light max-w-sm text-center md:text-left leading-relaxed">
+            Utilizamos cookies táticos para otimizar sua experiência no Centro de Inteligência. <a href="politica-privacidade" class="text-gold-600 dark:text-gold-400 font-bold hover:underline">Política</a>.
+        </p>
+
+        <div class="flex items-center shrink-0">
+            <button @click="showCookies = false; sessionStorage.setItem('cookiesAccepted', 'true')" 
+                    class="px-5 py-2 bg-gold-600 hover:bg-gold-500 text-white font-semibold text-xs uppercase tracking-wider rounded-lg transition-all shadow-md">
+                Aceitar
+            </button>
+        </div>
+    </div>
+
+
+
+
+    <!-- Botão Voltar ao Topo -->
+    <button @click="window.scrollTo({top: 0, behavior: 'smooth'})"
+            x-data="{ scrolled: false }"
+            @scroll.window="scrolled = (window.pageYOffset > 300)"
+            x-show="scrolled"
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 translate-y-10"
+            x-transition:enter-end="opacity-100 translate-y-0"
+            x-transition:leave="transition ease-in duration-300"
+            x-transition:leave-start="opacity-100 translate-y-0"
+            x-transition:leave-end="opacity-0 translate-y-10"
+            class="fixed bottom-8 right-8 z-[100] p-3 bg-zinc-900/90 dark:bg-white/90 text-white dark:text-zinc-900 rounded-full shadow-2xl backdrop-blur-md hover:scale-110 hover:bg-gold-600 dark:hover:bg-gold-500 transition-all border border-zinc-700 dark:border-white/20"
+            aria-label="Voltar ao topo" style="display: none;">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+</body>
+
+</html>
