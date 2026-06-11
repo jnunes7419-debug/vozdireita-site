@@ -23,16 +23,16 @@ def main():
     
     new_card_html = """
                     <!-- Item 1 -->
-                    <a href="analise-geopolitica-israel-ira.html" class="flex items-center p-4 bg-white/60 dark:bg-white/5 border border-zinc-200 dark:border-white/10 backdrop-blur-md rounded-xl hover:-translate-y-1 hover:shadow-lg hover:border-gold-500/30 transition-all duration-300 group" >
+                    <a href="analise-g1-master.html" class="flex items-center p-4 bg-white/60 dark:bg-white/5 border border-zinc-200 dark:border-white/10 backdrop-blur-md rounded-xl hover:-translate-y-1 hover:shadow-lg hover:border-gold-500/30 transition-all duration-300 group" >
                         <div class="flex-shrink-0 pr-4">
-                            <img src="assets/geopolitica_israel_ira.png" alt="Miniatura" class="w-16 h-16 md:w-20 md:h-20 object-cover rounded-lg group-hover:scale-105 transition-all duration-300" loading="lazy">
+                            <img src="assets/newsroom_banner.png" alt="Miniatura" class="w-16 h-16 md:w-20 md:h-20 object-cover rounded-lg group-hover:scale-105 transition-all duration-300" loading="lazy">
                         </div>
                         <div class="flex-grow">
                             <h4 class="font-playfair text-sm md:text-base font-bold text-zinc-900 dark:text-white group-hover:text-gold-600 dark:group-hover:text-gold-400 transition-colors leading-snug">
-                                Conflito Israel e Irã: Inversão de Culpabilidade
+                                A Justiça Seletiva e o Caso Master
                             </h4>
                             <p class="text-[11px] md:text-xs text-zinc-600 dark:text-zinc-400 font-light mt-2 line-clamp-2">
-                                Como a mídia legitima o terrorismo sob disfarce de "apelo à paz".
+                                Aparelhamento Jurídico: Como as manobras no judiciário e a rejeição de delações operam a proteção seletiva e a manutenção do ecossistema corporativo.
                             </p>
                         </div>
                     </a>
